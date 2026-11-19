@@ -378,6 +378,25 @@ nav.main a:hover{background:#F0F0EE;text-decoration:none}
 
 .toc .ts,.sh p,:lang(ka) .sh p{max-width:none;width:100%;text-align:justify;hyphens:manual}
 .toc .ts.one,.sh p.one{text-align-last:justify;white-space:nowrap}
+@page{margin:14mm}
+@media print{
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{background:#fff!important}
+header.top,.cnav,.ov,.topbar{display:none!important}
+.flag{break-inside:avoid;page-break-inside:avoid}
+.fh{display:block!important}
+.facts{display:block!important;margin:8px 0 0!important;text-align:left!important}
+.facts div{display:block!important;border:0!important;background:none!important;border-radius:0!important;padding:0 0 3px!important;margin:0!important;font-size:15px!important;line-height:1.35!important;color:#000!important;white-space:normal!important;text-align:left!important}
+.facts div dt,.facts div dd{display:inline!important;margin:0!important;padding:0!important;text-align:left!important;white-space:normal!important;color:#000!important;float:none!important}
+.facts div dt{font-weight:400!important}.facts div dt::after{content:":\00a0"!important}
+.facts div dd{font-weight:700!important}
+.facts div.pos{display:inline-block!important;background:#000!important;border-radius:999px!important;padding:6px 16px!important;margin-top:6px!important}
+.facts div.pos dt,.facts div.pos dd{color:#fff!important}
+.gal.car{flex-wrap:wrap!important;overflow:visible!important}
+.gal.car button{flex:0 0 auto!important;height:auto!important;width:calc(50% - 6px)!important}
+.gal.car img{height:auto!important;width:100%!important}
+.gal button{break-inside:avoid}
+}
 </style>
 
 <div class="annc"><span data-i18n="annc"></span><a class="chip" href="cv.pdf" data-dl="cv" data-i18n="dl_cv"></a></div>
@@ -502,9 +521,9 @@ const FLAGS=[
   imgs:[['tv1',''],['tv2',''],['tv3',''],['tv4','']]},
  {id:'bil',
   name:L('ბილტმორის ფოიე, თბილისი','Biltmore Hotel foyer, Tbilisi'),
-  facts:[[L('ტიპი','Type'),L('სასტუმრო, ფოიე','Hotel, foyer')],[L('პერიოდი','Period'),L('2015–2016','2015–2016')],[L('დამსაქმებელი','Employer'),L('ARCHI-TEX','ARCHI-TEX')],[L('პოზიცია','Position'),L('სამშენებლო პროექტის მენეჯერი ობიექტზე და უფროსი არქიტექტორი','Construction Project Manager on site and Senior Architect')]],
+  facts:[[L('ტიპი','Type'),L('სასტუმრო, ფოიე','Hotel, foyer')],[L('პერიოდი','Period'),L('2015–2016','2015–2016')],[L('დამსაქმებელი','Employer'),L('ARCHI-TEX','ARCHI-TEX')],[L('პოზიცია','Position'),L('სამშენებლო პროექტის მენეჯერი','Construction Project Manager')]],
   ctx:L('სასტუმრო Biltmore-ის ფოიეს სამუშაოები. ფოტოებზე შენობის ფასადია, არა ფოიე; ფოტოები ჩემი ავტორობა არ არის.','Works on the foyer of the Biltmore hotel. The photos show the building exterior, not the foyer, and are not my own work.'),
-  role:L('სამშენებლო პროექტის მენეჯერი ობიექტზე და უფროსი არქიტექტორი. პროცესის მართვა გეგმის მიხედვით, შესრულების მონიტორინგი და კონტროლი. ბიუჯეტის მართვა: პროექტის ხარჯების მონიტორინგი შესრულების მიხედვით. ხარისხის კონტროლი: სამუშაოს რეგულარული ინსპექტირება საპროექტო სპეციფიკაციებთან და ხარისხის სტანდარტებთან შესაბამისობაზე.','Construction Project Manager on site and Senior Architect. Managed the process against the plan, monitored and controlled performance. Budget management: monitored project expenses based on fulfilment. Quality control: regular inspections of the work to guarantee compliance with design specifications and quality standards.'),
+  role:L('სამშენებლო პროექტის მენეჯერი. პროცესის მართვა გეგმის მიხედვით, შესრულების მონიტორინგი და კონტროლი. ბიუჯეტის მართვა: პროექტის ხარჯების მონიტორინგი შესრულების მიხედვით. ხარისხის კონტროლი: სამუშაოს რეგულარული ინსპექტირება საპროექტო სპეციფიკაციებთან და ხარისხის სტანდარტებთან შესაბამისობაზე.','Construction Project Manager. Managed the process against the plan, monitored and controlled performance. Budget management: monitored project expenses based on fulfilment. Quality control: regular inspections of the work to guarantee compliance with design specifications and quality standards.'),
   tbd:{ch:L('დასამატებელია: ყველაზე რთული საკითხი ობიექტზე','To be added: the hardest issue on site'),so:L('დასამატებელია: რა გადაწყვეტილება მიიღეთ','To be added: the decision you made'),ou:L('დასამატებელია: შედეგი, ციფრები','To be added: result, figures')},
   imgs:[['bil1',''],['bil2',''],['bil3','']]},
  {id:'apex',
@@ -607,7 +626,7 @@ const JOBS=[
   L('ყოველდღიური სამუშაოების მონიტორინგი და პროგრესის უზრუნველყოფა','Day-to-day oversight of site operations'),
   L('მუშებისა და ქვეკონტრაქტორების კოორდინაცია და ზედამხედველობა','Coordinated and supervised workers and subcontractors'),
   L('უსაფრთხოება და ხარისხის კონტროლი; მასალების ხარჯვის აღრიცხვა და მომარაგება','Safety and quality control; material tracking and requisitions')]},
- {y:'2015 – 2016',org:'ARCHI-TEX',role:L('სამშენებლო პროექტის მენეჯერი ობიექტზე და უფროსი არქიტექტორი','Construction Project Manager on site and Senior Architect'),pts:[
+ {y:'2015 – 2016',org:'ARCHI-TEX',role:L('სამშენებლო პროექტის მენეჯერი','Construction Project Manager'),pts:[
   L('პროცესის მართვა გეგმის მიხედვით, შესრულების მონიტორინგი და კონტროლი','Managed the process against the plan, monitored and controlled performance'),
   L('პროექტის ხარჯების მონიტორინგი შესრულების მიხედვით','Monitored project expenses against fulfilment'),
   L('სამუშაოს რეგულარული ინსპექტირება საპროექტო სპეციფიკაციებთან შესაბამისობაზე','Regular inspections for compliance with design specifications')]},
