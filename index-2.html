@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Portfolio of Nikoloz Shatberashvili, architect and construction project manager."><meta property="og:title" content="Nikoloz Shatberashvili Portfolio"><meta property="og:description" content="Architect and construction project manager. Selected projects, 2009 to today."><meta property="og:image" content="hl1.jpg"></head><body>
+<title>Nikoloz Shatberashvili Portfolio</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Nunito+Sans:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@400;500;600;700;800&display=swap">
+<style>
+/* Concept: white studio page. Oversized grotesk headings, numbered sections 01-04, hairline rules, black type only. Layout follows studioschmid.de (numbered sections, one-line hero heading, project blocks with role lists, services rows, stats, contact). */
+:root{
+  --bg:#FFFFFF; --fg:#000000; --line:rgba(0,0,0,.16); --soft:#F4F4F4;
+  --f:"Nunito Sans","Noto Sans Georgian",system-ui,sans-serif; --fh:"Jost","Noto Sans Georgian",system-ui,sans-serif;
+  --gl:max(16px,env(safe-area-inset-left,0px)); --gr:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px;background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font-family:var(--f);font-size:17px;line-height:1.5;font-weight:400;padding-left:var(--gl);padding-right:var(--gr);padding-block:0;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.wrap{max-width:1320px;margin:0 auto}
+h1,h2,h3,.stat b,.job .yr,.ctg .v,.brand{font-family:var(--fh)}
+h1,h2,h3{font-weight:500;margin:0;text-wrap:balance;letter-spacing:-.03em}
+.sm{font-size:14px;letter-spacing:0}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);margin-left:calc(-1*var(--gl));margin-right:calc(-1*var(--gr));padding:0 var(--gr) 0 var(--gl)}
+header.top .wrap{display:flex;align-items:center;gap:28px;height:64px}
+.brand{font-weight:600;text-decoration:none;letter-spacing:-.01em;white-space:nowrap;background:var(--fg);color:var(--bg);padding:4px 10px;font-size:14px;line-height:1.5}
+.brand b{font-weight:800}
+nav.main{display:flex;gap:26px;margin-left:auto;font-size:15px}
+nav.main a{text-decoration:none}
+nav.main a:hover,.ul:hover{text-decoration:underline;text-underline-offset:4px}
+.lang{display:flex;gap:2px;margin-left:auto;font-size:14px}
+nav.main + .lang{margin-left:0}
+.lang button{border:0;background:transparent;padding:4px 8px}
+.lang button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+@media (max-width:760px){nav.main{display:none}}
+
+.hero{padding-block:72px 40px}
+.hero .eyebrow{font-size:15px;margin-bottom:28px}
+.hero h1{font-size:clamp(2.6rem,8.2vw,7.4rem);line-height:.98;font-weight:500;letter-spacing:-.04em;max-width:14ch}
+.hero .row{display:flex;justify-content:space-between;gap:32px;align-items:flex-end;flex-wrap:wrap;margin-top:36px}
+.hero p.lead{font-size:clamp(1.05rem,1.6vw,1.35rem);max-width:44ch;margin:0;line-height:1.35}
+.down{font-size:1.05rem;text-decoration:none;border-bottom:1px solid var(--fg);padding-bottom:2px}
+.down:hover{background:var(--fg);color:var(--bg)}
+
+.cmp{position:relative;aspect-ratio:16/8;overflow:hidden;background:#fff;border:1px solid var(--line);user-select:none;touch-action:pan-y;--p:50%;margin-top:8px}
+.cmp img{position:absolute;inset:0;width:100%;height:100%}
+.cmp .rn{object-fit:contain;object-position:50% 40%}
+.cmp .sk{object-fit:contain;background:#fff;clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.cmp .bar{position:absolute;top:0;bottom:0;left:var(--p);width:1px;background:var(--fg);pointer-events:none}
+.cmp .bar::after{content:"↔";position:absolute;top:50%;left:50%;width:40px;height:40px;transform:translate(-50%,-50%);background:var(--fg);color:var(--bg);border-radius:50%;display:grid;place-items:center;font-size:16px}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cmp .tag{position:absolute;top:12px;padding:2px 10px;background:var(--bg);border:1px solid var(--fg);font-size:13px}
+.cmp .tag.a{left:12px}.cmp .tag.b{right:12px}
+.cap{font-size:13.5px;margin:12px 0 0;max-width:80ch}
+@media (max-width:640px){.cmp{aspect-ratio:4/3}}
+
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 24px;border-top:1px solid var(--fg);margin-top:24px}
+.stat{padding:22px 24px 8px 0}
+.stat b{font-weight:500;font-size:clamp(2.4rem,4.6vw,4.2rem);line-height:1;letter-spacing:-.05em;display:block;font-variant-numeric:tabular-nums}
+.stat b.sm{font-size:clamp(1.7rem,3.1vw,2.9rem);height:clamp(2.4rem,4.6vw,4.2rem);display:flex;align-items:center;letter-spacing:-.03em;white-space:nowrap}
+:lang(ka) .stat b.sm{font-size:clamp(1.2rem,2vw,1.85rem);letter-spacing:-.01em}
+.stat span{display:block;margin-top:10px;font-size:15px;max-width:30ch}
+@media (max-width:900px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.stats{grid-template-columns:minmax(0,1fr)}.stat{padding:18px 0 8px}}
+
+section{padding-block:120px 0}
+.sh{margin-bottom:56px;display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
+.sh .top2{display:flex;gap:16px;font-size:15px;border-top:1px solid var(--fg);padding-top:14px}
+.sh .top2 .n{min-width:44px}
+.sh h2{font-size:clamp(2.4rem,6.4vw,5.6rem);line-height:.98;font-weight:500;letter-spacing:-.045em;max-width:18ch}
+.sh p{margin:0;max-width:56ch;font-size:1.1rem;line-height:1.4}
+
+/* contents index */
+.toc{margin-top:96px}
+.toc .lab{margin-bottom:22px}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:start}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* case studies */
+.flag{padding-block:44px 28px;border-top:1px solid var(--line)}
+.fh{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:32px;align-items:start;margin-bottom:28px}
+.fh h3{font-size:clamp(2rem,4.6vw,4rem);line-height:1;letter-spacing:-.045em;font-weight:500}
+.facts{margin:0;display:grid;gap:0}
+.facts div{display:flex;justify-content:flex-end;gap:6px;padding:3px 0;font-size:15px}
+.facts dt::after{content:":"}
+.facts dt,.facts dd{margin:0}
+.facts dd{text-align:right;font-weight:500}
+@media (max-width:900px){.fh{grid-template-columns:minmax(0,1fr)}}
+/* gallery: justified rows, every image keeps its own proportions (no cropping) */
+.gal{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start}
+.gal::after{content:"";flex-grow:1000000}
+.gal.fill::after{display:none}
+.gal button{padding:0;border:0;background:var(--soft);overflow:hidden;display:block;min-width:0;border-radius:14px}
+.gal img{display:block;width:100%;height:auto;aspect-ratio:var(--ar);object-fit:contain;transition:transform .6s}
+.gal button.plan{background:#fff;border:1px solid var(--line)}
+.gal button:hover img{transform:scale(1.02)}
+@media(max-width:640px){.gal button{flex-basis:calc(50% - 6px)!important}.gal button.hero1{flex-basis:100%!important}}
+.bd{margin:40px 0 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:36px 40px}
+@media(max-width:760px){.bd{grid-template-columns:minmax(0,1fr)}}
+.bd > div{border-top:1px solid var(--fg);padding-top:12px}
+.bd dt{font-size:14px;margin-bottom:8px;font-weight:500}
+.bd dd{margin:0;max-width:none;text-align:left;text-wrap:pretty}
+.bd > div + div dd{text-align:justify;hyphens:manual}
+.tbd{display:block;padding:12px 14px;border:1px dashed var(--fg);background:var(--soft);font-size:14.5px}
+@media (prefers-reduced-motion:reduce){.gal img,.card img{transition:none}html{scroll-behavior:auto}}
+
+.dls{display:flex;gap:22px;flex-wrap:wrap;align-items:baseline}
+.dlb{font-size:1.05rem;text-decoration:none;border:1px solid var(--fg);padding:8px 16px}
+.dlb:hover{background:var(--fg);color:var(--bg)}
+.dlmsg{font-size:14px;min-height:1.4em;margin:12px 0 0}
+.pn{font-family:var(--f);font-size:15px;font-weight:500;letter-spacing:0;display:block;margin-bottom:12px}
+.flag:target,.flag{scroll-margin-top:72px}
+/* archive (unused) */
+.subh{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;border-top:1px solid var(--fg);padding-top:14px;margin:88px 0 28px}
+.subh h3{font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-.035em}
+.chips{display:flex;gap:18px;flex-wrap:wrap;font-size:15px}
+.chip{border:0;background:transparent;padding:2px 0;border-bottom:1px solid transparent}
+.chip:hover{border-bottom-color:var(--fg)}
+.chip[aria-pressed="true"]{border-bottom-color:var(--fg);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 20px}
+.card{text-align:left;background:transparent;border:0;padding:0;display:block}
+.card .im{aspect-ratio:4/3;overflow:hidden;background:var(--soft)}
+.card img{width:100%;height:100%;object-fit:contain;transition:transform .6s}
+.card:hover img{transform:scale(1.04)}
+.card h3{font-size:1.2rem;letter-spacing:-.02em;line-height:1.2;margin:12px 0 4px}
+.card .m{font-size:14px;display:block}
+.card .t{font-size:13px;display:block;margin-top:2px;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.grid{grid-template-columns:minmax(0,1fr)}}
+
+/* approach rows */
+.disc{border-top:1px solid var(--fg)}
+.disc div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;padding:30px 0;border-bottom:1px solid var(--line)}
+.disc h3{font-size:clamp(1.6rem,3.2vw,2.6rem);line-height:1.05;letter-spacing:-.04em}
+.disc p{margin:0;max-width:46ch;font-size:1.05rem}
+@media (max-width:700px){.disc div{grid-template-columns:minmax(0,1fr);gap:10px}}
+.disc{border-top:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
+.disc div{display:flex;flex-direction:column;gap:16px;padding:26px 24px;border:1px solid var(--pill-b);background:var(--pill-bg);border-radius:28px}
+.disc h3{font-size:clamp(1.4rem,2.1vw,1.9rem)}
+.disc p{max-width:none;font-size:1rem;line-height:1.45}
+@media(max-width:1100px){.disc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.disc{grid-template-columns:minmax(0,1fr)}}
+
+/* career */
+.tl{border-top:1px solid var(--fg)}
+.job{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr);gap:32px;padding:30px 0;border-bottom:1px solid var(--line)}
+.job .yr{font-size:clamp(1.3rem,2.4vw,1.9rem);letter-spacing:-.03em;font-weight:500;font-variant-numeric:tabular-nums}
+.job h3{font-size:1.35rem;letter-spacing:-.025em}
+.job .org{margin:2px 0 10px;font-weight:500}
+.job .pj{display:inline-block;border:1px solid var(--fg);padding:1px 10px;margin-bottom:10px;font-size:13.5px}
+.job ul{margin:0;padding-left:18px;max-width:68ch}
+.job li{margin:3px 0}
+@media (max-width:700px){.job{grid-template-columns:minmax(0,1fr);gap:8px}}
+#tl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
+#tl .job{grid-template-columns:minmax(0,1fr);gap:10px;padding:26px 28px;border:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:22px;align-content:start}
+#tl .job ul{max-width:none}
+@media(max-width:900px){#tl{grid-template-columns:minmax(0,1fr)}}
+
+
+.two{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:56px;margin-top:8px}
+@media (max-width:900px){.two{grid-template-columns:minmax(0,1fr);gap:40px}}
+.lab{font-size:14px;font-weight:500;border-top:1px solid var(--fg);padding-top:12px;margin:0 0 6px}
+.tools{margin-bottom:8px}
+.tool{display:grid;grid-template-columns:minmax(0,1fr) auto 110px;gap:14px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+.meter{display:flex;gap:3px}
+.meter i{height:6px;flex:1;background:var(--line)}
+.meter i.on{background:var(--fg)}
+.tool b{font-weight:500}
+.ed div{padding:13px 0;border-bottom:1px solid var(--line)}
+.ed b{display:block;font-weight:500}
+.ed span{font-size:15px}
+#langs{display:grid;grid-template-columns:1fr 1fr;column-gap:0}
+#langs div:nth-child(even){padding-left:28px}
+#langs div:last-child:nth-child(odd){grid-column:1/-1}
+.certs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0 36px}
+.certs button{padding:0;border:1px solid var(--line);background:#fff;text-align:left}
+.certs button:hover{border-color:var(--fg)}
+.certs span{display:block;padding:8px 10px;font-size:13px;line-height:1.35}
+.sp{height:36px}
+
+.chead{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:56px}
+.chead h2{margin-bottom:0}
+.cph{margin:0;flex:none;width:clamp(170px,24vw,320px);position:relative;border-radius:18px;overflow:hidden;aspect-ratio:1290/1285;background:#eee}
+.cph img{width:100%;height:100%;object-fit:contain;display:block;filter:grayscale(1)}
+.cph figcaption{position:absolute;left:10px;bottom:10px;background:#fff;border:1px solid var(--pill-b);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600}
+.chead{display:block;margin-bottom:40px}
+.ctop{display:flex;justify-content:space-between;align-items:flex-start;gap:40px}
+.ctop .dls{flex:none;display:flex;flex-direction:column;align-items:stretch;gap:10px;margin:0}
+.ctop .dlb{justify-content:center;text-align:center;white-space:nowrap}
+.cint{flex:1;margin:0;max-width:none;font-size:clamp(1rem,1.35vw,1.2rem);line-height:1.5}
+.cbody{display:grid;grid-template-columns:minmax(220px,360px) minmax(0,1fr);gap:48px;align-items:stretch}
+.cbody .cph{width:100%;align-self:start}
+.cbody .cl{display:flex;flex-direction:column;gap:26px;justify-content:space-between;min-width:0}
+.cbody .ctg{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.cbody .ctg>div{display:grid;grid-template-columns:110px minmax(0,1fr) auto;align-items:center;gap:16px;padding:18px 0;border-top:1px solid var(--fg)}
+.cbody .ctg>div:last-child{border-bottom:1px solid var(--fg)}
+.cbody .ctg .k{margin:0}
+.cbody .ctg .v{font-size:clamp(1.1rem,2vw,1.7rem);white-space:nowrap;overflow-wrap:normal}
+.cbody .dls{margin:0}
+@media(max-width:760px){.ctop{flex-direction:column;gap:20px}.ctop .dls{flex-direction:row;flex-wrap:wrap}.cbody{grid-template-columns:minmax(0,1fr);gap:28px}.cbody .cph{max-width:320px}.cbody .ctg>div{grid-template-columns:minmax(0,1fr) auto}.cbody .ctg .k{grid-column:1/-1}.cbody .ctg .v{white-space:normal;overflow-wrap:anywhere}}
+.sh h2.one,.contact h2.one{white-space:nowrap;max-width:none;width:100%;margin-bottom:0}
+.contact{padding-block:0 0}
+.contact h2{font-size:clamp(2.6rem,9vw,8rem);line-height:.95;letter-spacing:-.055em;font-weight:500;max-width:12ch;margin-bottom:56px}
+.ctg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.ctg > div{border-top:1px solid var(--fg);padding-top:12px}
+.ctg .k{font-size:14px;margin-bottom:6px}
+.ctg .v{font-size:clamp(1.3rem,2.6vw,2rem);letter-spacing:-.03em;font-weight:500;overflow-wrap:anywhere;user-select:all}
+.cp{border:1px solid var(--fg);background:transparent;padding:3px 12px;font-size:13px;margin-top:12px}
+.cp:hover{background:var(--fg);color:var(--bg)}
+.refs{font-size:14px;margin:28px 0 0}
+@media (max-width:700px){.ctg{grid-template-columns:minmax(0,1fr)}}
+footer{border-top:1px solid var(--fg);margin-top:96px;padding-block:18px 36px;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.ov{position:fixed;inset:0;z-index:100;background:rgba(255,255,255,.96);display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:max(24px,env(safe-area-inset-top,0px)) 16px 40px}
+.ov[hidden]{display:none}
+.md{background:var(--bg);width:min(1040px,100%);border:1px solid var(--fg);margin:auto 0}
+.md header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:18px 20px;border-bottom:1px solid var(--fg)}
+.md h3{font-size:1.6rem}
+.md .x{border:1px solid var(--fg);background:transparent;padding:4px 14px;font-size:13px;flex:none}
+.md .x:hover{background:var(--fg);color:var(--bg)}
+.md .bd2{padding:20px;display:grid;gap:14px}
+.md .bd2 p{margin:0;max-width:70ch}
+.md .imgs{display:grid;gap:10px}
+.md .imgs img{width:100%;height:auto;border:1px solid var(--line)}
+@media (min-width:760px){.md .imgs.multi{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.hf img{width:100%;height:auto;object-fit:contain;background:var(--soft)}
+:lang(ka){--f:"Noto Sans Georgian",system-ui,sans-serif;--fh:"Noto Sans Georgian",system-ui,sans-serif}
+:lang(ka) body{font-weight:500}
+:lang(ka) h1,:lang(ka) h2,:lang(ka) h3,:lang(ka) .stat b,:lang(ka) .job .yr,:lang(ka) .ctg .v,:lang(ka) .brand,:lang(ka) .tile .n{font-weight:700;letter-spacing:-.01em}
+:lang(ka) .hero h1{font-size:clamp(1.9rem,5.2vw,4.6rem);font-weight:700;letter-spacing:-.01em;line-height:1.12;max-width:22ch}
+:lang(ka) .sh h2{font-size:clamp(1.7rem,4.2vw,3.6rem);font-weight:700;letter-spacing:-.01em;line-height:1.12;max-width:26ch}
+:lang(ka) .contact h2{font-size:clamp(1.9rem,5.4vw,4.6rem);font-weight:700;letter-spacing:-.01em;line-height:1.12;max-width:20ch}
+:lang(ka) .fh h3{font-size:clamp(1.5rem,3.2vw,2.6rem);line-height:1.12;letter-spacing:-.01em}
+:lang(ka) .disc h3{font-size:clamp(1.15rem,1.7vw,1.6rem);line-height:1.15;letter-spacing:-.01em}
+:lang(ka) .job h3{font-size:1.2rem;letter-spacing:0}
+:lang(ka) .stat b{font-size:clamp(2.1rem,4vw,3.6rem)}
+:lang(ka) .hero .lead{max-width:48ch}
+:lang(ka) .lab,:lang(ka) .bd dt,:lang(ka) .facts dd,:lang(ka) .job .org,:lang(ka) .tool b,:lang(ka) .ed b,:lang(ka) .tile b,:lang(ka) .pn,:lang(ka) .nav a{font-weight:600}
+:lang(ka) .stat b{letter-spacing:-.02em}
+:lang(ka) h1,:lang(ka) h2,:lang(ka) h3,:lang(ka) .hero p.lead,:lang(ka) .sh p{text-wrap:pretty;max-width:none}
+:lang(ka) .hero h1{font-size:clamp(1.7rem,4.6vw,4.2rem)}
+:lang(ka) .sh h2{font-size:clamp(1.6rem,3.8vw,3.2rem)}
+:lang(ka) .contact h2{font-size:clamp(1.7rem,4.6vw,4rem)}
+:lang(ka) .hero p.lead{max-width:60ch}
+:lang(ka) .hero h1{max-width:none;font-size:clamp(1.5rem,3.8vw,3.4rem);text-wrap:pretty}
+:lang(ka) .sh h2{max-width:none;font-size:clamp(1.5rem,3.2vw,2.8rem)}
+:lang(ka) .contact h2{max-width:none;font-size:clamp(1.5rem,3.8vw,3.4rem)}
+:lang(ka) .hero p.lead{max-width:60ch}
+.hero h1{font-size:clamp(1.7rem,3.5vw,3.2rem);line-height:1.12;letter-spacing:-.03em;max-width:32ch;font-weight:500}
+:lang(ka) .hero h1{max-width:none;font-size:clamp(1.4rem,3vw,2.8rem);line-height:1.15;letter-spacing:-.01em}
+#toast{display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:max(20px,env(safe-area-inset-bottom));z-index:80;background:#000;color:#fff;padding:12px 18px;font-size:14px;max-width:min(92vw,560px)}
+#edbtn{position:fixed;right:16px;bottom:16px;z-index:90;background:#000;color:#fff;border:0;padding:12px 18px;font:inherit;cursor:pointer}
+#edbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:95;background:#000;color:#fff;gap:16px;align-items:center;padding:10px max(16px,env(safe-area-inset-right)) 10px max(16px,env(safe-area-inset-left));font-size:13px;flex-wrap:wrap}
+#edbar .ln{flex:1;opacity:.8;min-width:200px}#edbar button{background:#fff;color:#000;border:0;padding:8px 14px;font:inherit;cursor:pointer}
+body.editing [data-ek].ed{outline:1px dashed #E5007D;outline-offset:3px;cursor:text}
+body.editing [data-ek].ed:focus{outline:2px solid #E5007D;background:#fff6fb}
+body.editing{padding-bottom:70px}
+@media(max-width:520px){header.top .wrap{gap:10px}.brand{font-size:11.5px;padding:4px 7px;letter-spacing:-.02em}.lang button{padding:4px 6px}}
+
+/* ===== graya-style hero (light) ===== */
+body{background:#fff}
+.annc{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;font-size:13px;padding:12px 0}
+.chip{background:#F0F0EE;border-radius:999px;padding:4px 12px;text-decoration:none;font-size:13px}
+.chip:hover{background:var(--fg);color:var(--bg)}
+.frame{background:#F0F0EE;border-radius:28px;padding:14px;max-width:1500px;margin:0 auto 24px}
+.panel{background:#fff;border-radius:20px;overflow:hidden;position:relative;min-height:0;display:flex;flex-direction:column}
+.panel header.top{position:static;margin:0;padding:18px 22px;background:transparent}
+.panel header.top .wrap{height:auto;max-width:none}
+.brand{border-radius:8px}
+.lang button{border-radius:999px}
+nav.main a{padding:6px 12px;border-radius:999px}
+nav.main a:hover{background:#F0F0EE;text-decoration:none}
+.panel .hero{padding:clamp(20px,4vw,56px) clamp(16px,4vw,48px) clamp(48px,6vw,88px);text-align:center;display:flex;flex-direction:column;align-items:center;flex:1}
+.panel .hero .eyebrow{font-size:14px;margin-bottom:22px;color:#444}
+.panel .hero h1{max-width:34ch;margin:0 auto;font-size:clamp(1.45rem,2.7vw,2.5rem);line-height:1.12;text-wrap:balance}
+.panel .hero p.lead,:lang(ka) .panel .hero p.lead{max-width:none}
+@media(min-width:900px){.panel .hero p.lead{white-space:nowrap}}
+.panel .hero p.lead{max-width:56ch;margin:22px auto 0;font-size:clamp(.95rem,1.3vw,1.1rem);color:#333;line-height:1.45}
+.cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:28px}
+.pill{display:inline-flex;align-items:center;gap:14px;border:1px solid var(--fg);border-radius:999px;padding:5px 5px 5px 20px;text-decoration:none;font-size:15px}
+.pill i{width:34px;height:34px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font-style:normal;transition:transform .2s}
+.pill:hover i{transform:translateY(2px)}
+.pill2{border:1px solid rgba(0,0,0,.25);border-radius:999px;padding:10px 18px;text-decoration:none;font-size:15px}
+.pill2:hover{background:var(--fg);color:var(--bg)}
+.dr{width:100%;height:auto;margin-top:auto;padding-top:34px;color:#111;display:block}
+.dr .lbl text{font-family:var(--f);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:0;animation:fi .8s 1.4s forwards}
+:lang(ka) .dr .lbl text{text-transform:none;letter-spacing:.02em}
+.dr .ln{stroke-dasharray:1;stroke-dashoffset:1;animation:dr 1.4s cubic-bezier(.4,0,.2,1) forwards;animation-delay:var(--d,0s)}
+@keyframes dr{to{stroke-dashoffset:0}}
+@keyframes fi{to{opacity:.8}}
+@media (prefers-reduced-motion:reduce){.dr .ln{animation:none;stroke-dashoffset:0}.dr .lbl text{animation:none;opacity:.8}}
+@media (max-width:760px){.dr .lbl{display:none}.frame{border-radius:20px;padding:8px}.panel{border-radius:14px}.panel header.top{padding:12px}}
+.gal img,.tile .im,.tile .im img{border-radius:12px}
+.dlb{border-radius:999px}
+
+/* ===== pill language ===== */
+:root{--pill-b:rgba(0,0,0,.28);--pill-bg:#F8F8F8}
+.sh .top2,.lab{border-top:0;padding-top:0}
+.sh .top2{align-items:center;gap:8px;flex-wrap:wrap}
+.sh .top2 span,.lab,.pn,.facts div,.job .pj,.tool span.sm,.bd dt,.ctg button,[data-copy]{display:inline-flex;align-items:center;border:1px solid var(--pill-b);border-radius:999px;background:var(--pill-bg);font-weight:600;line-height:1.2}
+.sh .top2 span{padding:9px 20px;font-size:15px;min-width:0}
+.sh .top2 .n{min-width:0}
+.lab{padding:9px 20px;margin:0 0 16px;font-size:14px}
+.pn{padding:7px 16px;font-size:14px;margin-bottom:16px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.facts div{padding:7px 16px;font-size:14px;gap:6px;justify-content:flex-start}
+.facts dd{text-align:left;font-weight:600}
+.facts dt{font-weight:400}
+.facts div.pos{background:#000;border-color:#000;color:#fff}.facts div.pos dt,.facts div.pos dd{color:#fff}.facts div.pos dd{font-weight:700}
+@media(min-width:760px){.facts div.pos dd{white-space:nowrap}}
+@media (max-width:900px){.facts{justify-content:flex-start}}
+.bd > div{border-top:0;padding-top:0}
+.bd dt{padding:7px 16px;font-size:14px;margin-bottom:14px}
+.job .pj{padding:4px 14px;font-size:13px;margin:4px 0 10px}
+.tool span.sm{padding:2px 12px;font-size:12.5px}
+.tbd{border-radius:18px;background:var(--pill-bg)}
+.stat{border-radius:0}
+.ctg button,[data-copy]{padding:6px 16px;font-size:13px}
+#edbtn,#edbar button,#toast{border-radius:999px}
+#edbar{border-radius:999px 999px 0 0}
+.certs button,#certs button{border-radius:14px;overflow:hidden}
+.tile .im,.tile img{border-radius:14px}
+.md{border-radius:20px}
+
+.role{display:inline-flex;align-items:center;gap:16px;border:1px solid var(--pill-b);background:var(--pill-bg);border-radius:999px;padding:8px 32px 8px 8px;margin-bottom:30px;text-align:left}
+.role .me{width:68px;height:68px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font-family:var(--fh);font-weight:700;font-size:22px;letter-spacing:.02em;overflow:hidden;flex:none}
+.role .me img{width:100%;height:100%;object-fit:contain}
+.role .rt{display:flex;flex-direction:column;line-height:1.15}
+.role b{font-family:var(--fh);font-size:clamp(1.2rem,2.2vw,1.8rem);font-weight:700;letter-spacing:-.02em}
+.role small{font-size:14px;margin-top:4px;color:#444}
+@media(max-width:520px){.role{padding:6px 18px 6px 6px;gap:12px}.role .me{width:52px;height:52px;font-size:17px}.role b{font-size:1.05rem}}
+
+/* hero: one shared width, justified */
+.panel .hero{--hw:min(100%,50rem)}
+.panel .hero h1,:lang(ka) .panel .hero h1{width:var(--hw);max-width:var(--hw);text-wrap:pretty;text-align:justify;text-align-last:center;hyphens:manual;line-height:1.18;font-size:clamp(1.3rem,2.25vw,2.05rem)}
+.panel .hero p.lead,:lang(ka) .panel .hero p.lead{width:var(--hw);max-width:var(--hw);white-space:normal;text-align:justify;text-align-last:center;font-size:clamp(1rem,1.35vw,1.2rem)}
+.panel .hero p.lead.one{text-align-last:justify}
+/* stats as rounded cards */
+.stats{border-top:0!important;gap:14px!important;margin-top:28px}
+.stat{border:1px solid var(--pill-b);background:var(--pill-bg);border-radius:28px;padding:24px 26px 26px!important;display:flex;flex-direction:column;justify-content:flex-start;gap:34px;min-height:170px}
+.stat b,:lang(ka) .stat b{font-size:clamp(1.9rem,3.5vw,3.1rem)!important;line-height:1.05;letter-spacing:-.035em;font-weight:500;white-space:nowrap}
+:lang(ka) .stat b{font-weight:700;letter-spacing:-.01em;font-size:clamp(1.6rem,2.9vw,2.6rem)!important}
+:lang(ka) .stat span{font-size:13.5px!important}
+.stat span{margin-top:0!important;font-size:14.5px;line-height:1.4;max-width:none;color:#333}
+@media(max-width:520px){.stat{min-height:0}}
+.toc .th{font-size:clamp(1.8rem,3.8vw,3.1rem);line-height:1.08;letter-spacing:-.04em;font-weight:500;max-width:22ch;margin:0 0 14px}
+:lang(ka) .toc .th{font-weight:700;letter-spacing:-.01em;max-width:32ch;font-size:clamp(1.5rem,3vw,2.5rem)}
+.toc .ts{margin:0 0 30px;font-size:1.05rem;color:#333}
+/* category cards: one shared system (rounded card, chip, big title, list, uncropped photo) */
+.tile{text-align:left;display:flex;flex-direction:column;gap:14px;padding:18px 18px 18px;border:1px solid var(--pill-b);background:var(--pill-bg);border-radius:28px;color:inherit;cursor:pointer;transition:background .25s,transform .25s}
+.tile:hover{background:#efefef;transform:translateY(-2px)}
+.tile .tp{display:flex;justify-content:space-between;align-items:center}
+.tile .tc{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--pill-b);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600}
+.tile .tg{width:34px;height:34px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font-style:normal;font-size:15px}
+.tile .tn{font-family:var(--fh);font-size:clamp(1.6rem,2.4vw,2.2rem);line-height:1.05;letter-spacing:-.035em;font-weight:500;margin-top:6px}
+:lang(ka) .tile .tn{font-weight:700;letter-spacing:-.01em;font-size:clamp(1.35rem,1.9vw,1.8rem)}
+.tile .tls{list-style:none;margin:0;padding:0;display:grid;gap:5px;font-size:13px;line-height:1.3;color:#444}
+.tile .tls li{padding-top:5px;border-top:1px solid var(--line)}
+.tile .im{margin-top:4px;border-radius:18px;overflow:hidden;background:#fff}
+.tile .im img{display:block;width:100%;height:auto;aspect-ratio:var(--ar);object-fit:contain;transition:transform .6s}
+.tile:hover .im img{transform:scale(1.03)}
+@media (max-width:1100px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.tiles{grid-template-columns:minmax(0,1fr)}}
+
+.gal.car{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;align-items:stretch}
+.gal.car::-webkit-scrollbar{display:none}.gal.car::after{display:none}
+.gal.car button{flex:0 0 auto!important;height:clamp(240px,34vw,470px);width:auto!important;scroll-snap-align:start}
+.gal.car img{height:100%;width:auto!important;aspect-ratio:var(--ar);max-width:none}
+.cnav{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-top:14px}
+.cnav button{width:46px;height:34px;border-radius:999px;border:1px solid var(--pill-b);background:var(--pill-bg);font:inherit;font-size:17px;cursor:pointer;color:var(--fg)}
+.cnav button:hover:not(:disabled){background:#000;color:#fff;border-color:#000}.cnav button:disabled{opacity:.35;cursor:default}
+.cnav .cc{display:inline-flex;align-items:center;padding:7px 16px;border:1px solid var(--pill-b);border-radius:999px;background:var(--pill-bg);font-size:14px;font-weight:600}
+
+.toc .ts,.sh p,:lang(ka) .sh p{max-width:none;width:100%;text-align:justify;hyphens:manual}
+.toc .ts.one,.sh p.one{text-align-last:justify;white-space:nowrap}
+@page{margin:14mm}
+@media print{
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{background:#fff!important}
+header.top,.cnav,.ov,.topbar{display:none!important}
+.flag{break-inside:avoid;page-break-inside:avoid}
+.fh{display:block!important}
+.facts{display:block!important;margin:8px 0 0!important;text-align:left!important}
+.facts div{display:block!important;border:0!important;background:none!important;border-radius:0!important;padding:0 0 3px!important;margin:0!important;font-size:15px!important;line-height:1.35!important;color:#000!important;white-space:normal!important;text-align:left!important}
+.facts div dt,.facts div dd{display:inline!important;margin:0!important;padding:0!important;text-align:left!important;white-space:normal!important;color:#000!important;float:none!important}
+.facts div dt{font-weight:400!important}.facts div dt::after{content:":\00a0"!important}
+.facts div dd{font-weight:700!important}
+.facts div.pos{display:inline-block!important;background:#000!important;border-radius:999px!important;padding:6px 16px!important;margin-top:6px!important}
+.facts div.pos dt,.facts div.pos dd{color:#fff!important}
+.gal.car{flex-wrap:wrap!important;overflow:visible!important}
+.gal.car button{flex:0 0 auto!important;height:auto!important;width:calc(50% - 6px)!important}
+.gal.car img{height:auto!important;width:100%!important}
+.gal button{break-inside:avoid}
+}
+</style>
+
+<div class="annc"><span data-i18n="annc"></span><a class="chip" href="cv.pdf" data-dl="cv" data-i18n="dl_cv"></a></div>
+<div class="frame"><div class="panel">
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top" data-i18n="brand"></a>
+  <nav class="main">
+    <a href="#projects" data-i18n="nav_projects"></a>
+    <a href="#approach" data-i18n="nav_approach"></a>
+    <a href="#about" data-i18n="nav_career"></a>
+    <a href="#contact" data-i18n="cta2"></a>
+  </nav>
+</div></header>
+<div class="hero" id="top">
+  <div class="role"><span class="me" id="me" aria-hidden="true">NS</span><span class="rt"><b data-i18n="role1"></b><small data-i18n="role2"></small></span></div>
+  <h1 data-i18n="h1"></h1>
+  <p class="lead" data-i18n="lead"></p>
+  <div class="cta"><a class="pill" href="#projects"><span data-i18n="cta1"></span><i>↓</i></a><a class="pill2" href="portfolio.pdf" data-dl="portfolio" data-i18n="dl_pf"></a><a class="pill2" href="cv.pdf" data-dl="cv" data-i18n="dl_cv"></a></div>
+</div>
+</div></div>
+
+<main class="wrap">
+  <div class="stats" id="stats"></div>
+
+  <div class="toc"><h2 class="th" data-i18n="toc"></h2><p class="ts" data-i18n="toc_sub"></p><div class="tiles" id="tiles"></div></div>
+
+  <section id="projects">
+    <div class="sh"><div class="top2"><span class="n">01</span><span data-i18n="d_projects"></span></div><h2 data-i18n="h_projects"></h2><p data-i18n="p_projects"></p></div>
+    <div id="flags"></div>
+  </section>
+
+  <section id="approach">
+    <div class="sh"><div class="top2"><span class="n">02</span><span data-i18n="d_approach"></span></div><h2 data-i18n="h_approach"></h2><p data-i18n="p_approach"></p></div>
+    <div class="disc" id="disc"></div>
+  </section>
+
+  <section id="about">
+    <div class="sh"><div class="top2"><span class="n">03</span><span data-i18n="d_career"></span></div><h2 data-i18n="h_career"></h2><p data-i18n="p_career"></p></div>
+    <div class="tl" id="tl"></div>
+    <div class="sp"></div>
+    <div class="two">
+      <div><p class="lab" data-i18n="software"></p><div class="tools" id="tools"></div></div>
+      <div>
+        <p class="lab" data-i18n="education"></p><div class="ed" id="ed"></div>
+        <div class="sp"></div>
+        <p class="lab" data-i18n="langs"></p><div class="ed" id="langs"></div>
+      </div>
+    </div>
+    <div class="sp"></div>
+    <p class="lab" data-i18n="certs"></p><div class="certs" id="certs"></div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="sh"><div class="top2"><span class="n">04</span><span data-i18n="nav_contact"></span></div></div>
+    <div class="chead"><h2 data-i18n="h_contact"></h2></div>
+    <div class="cbody"><figure class="cph"><img id="meport" alt="Nikoloz Shatberashvili"><figcaption>Nikoloz Shatberashvili</figcaption></figure><div class="cl"><div class="ctop"><p class="cint" data-i18n="p_contact"></p><div class="dls"><a class="dlb" href="portfolio.pdf" data-dl="portfolio" data-i18n="dl_pf"></a><a class="dlb" href="cv.pdf" data-dl="cv" data-i18n="dl_cv"></a></div></div><div class="ctg">
+      <div><div class="k" data-i18n="email"></div><div class="v" id="v-mail">nika.shatberashvili11@gmail.com</div><button class="cp" data-copy="v-mail" data-i18n="copy"></button></div>
+      <div><div class="k" data-i18n="phone"></div><div class="v" id="v-tel">+995 599 33 46 27</div><button class="cp" data-copy="v-tel" data-i18n="copy"></button></div>
+    </div>
+    </div></div>
+    <p class="dlmsg" id="dlmsg" role="status"></p>
+    <p class="refs" data-i18n="refs"></p>
+  </section>
+  <footer><span>© 2026 Nikoloz Shatberashvili</span><a class="ul" href="#top" data-i18n="top"></a></footer>
+</main>
+
+<div class="ov" id="ov" hidden><div class="md" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <header><h3 id="mt"></h3><button class="x" id="mx">✕</button></header>
+  <div class="bd2" id="mb"></div>
+</div></div>
+
+<script>
+const IMG={"apx1": "apx1.jpg", "apx2": "apx2.jpg", "bil1": "bil1.jpg", "bil2": "bil2.jpg", "bil3": "bil3.jpg", "cert1": "cert1.jpg", "cert2": "cert2.jpg", "gcc": "gcc.jpg", "gcc2": "gcc2.jpg", "gcc3": "gcc3.jpg", "hl1": "hl1.jpg", "hl2": "hl2.jpg", "hsk": "hsk.jpg", "ih1": "ih1.jpg", "ih2": "ih2.jpg", "ih3": "ih3.jpg", "ih4": "ih4.jpg", "ihel": "ihel.jpg", "ihpl": "ihpl.jpg", "ihsec": "ihsec.jpg", "ilia1": "ilia1.jpg", "ilia2": "ilia2.jpg", "ilia3": "ilia3.jpg", "ilia4": "ilia4.jpg", "ilia5": "ilia5.jpg", "ilia6": "ilia6.jpg", "isa1": "isa1.jpg", "isa2": "isa2.jpg", "isa3": "isa3.jpg", "isapl": "isapl.jpg", "kg1": "kg1.jpg", "kg2": "kg2.jpg", "kg3": "kg3.jpg", "kg4": "kg4.jpg", "kgpl": "kgpl.jpg", "ku1": "ku1.jpg", "ku2": "ku2.jpg", "ku3": "ku3.jpg", "ku4": "ku4.jpg", "kupl": "kupl.jpg", "lib1": "lib1.jpg", "lib2": "lib2.jpg", "libcov": "libcov.jpg", "libel": "libel.jpg", "libfac": "libfac.jpg", "libpl": "libpl.jpg", "libsec": "libsec.jpg", "me_port": "me_port.jpg", "mf1": "mf1.jpg", "mf2": "mf2.jpg", "mf3": "mf3.jpg", "mf4": "mf4.jpg", "mf5": "mf5.jpg", "mfpl": "mfpl.jpg", "mfsec": "mfsec.jpg", "rc1": "rc1.jpg", "rc2": "rc2.jpg", "rc3": "rc3.jpg", "rc4": "rc4.jpg", "rc6": "rc6.jpg", "rcpl": "rcpl.jpg", "rcsec": "rcsec.jpg", "sc1": "sc1.jpg", "sc2": "sc2.jpg", "sc3": "sc3.jpg", "sc4": "sc4.jpg", "scpl": "scpl.jpg", "tsi1": "tsi1.jpg", "tsi2": "tsi2.jpg", "tsi3": "tsi3.jpg", "tsi4": "tsi4.jpg", "tsi5": "tsi5.jpg", "tsiel": "tsiel.jpg", "tv1": "tv1.jpg", "tv2": "tv2.jpg", "tv3": "tv3.jpg", "tv4": "tv4.jpg"};
+const AR={"apx1": 1.5217, "apx2": 1.6687, "bil1": 1.7742, "bil2": 0.6657, "bil3": 1.4993, "cert1": 1.3975, "cert2": 1.3975, "gcc": 1.7886, "gcc2": 1.5, "gcc3": 1.5038, "hl1": 2.1333, "hl2": 0.8, "hsk": 1.6, "ih1": 1.7799, "ih2": 1.7776, "ih3": 1.7778, "ih4": 1.7778, "ihel": 1.5, "ihpl": 1.5, "ihsec": 1.5, "ilia1": 1.5997, "ilia2": 1.7771, "ilia3": 1.5, "ilia4": 1.7778, "ilia5": 1.7778, "ilia6": 1.0, "isa1": 1.0014, "isa2": 1.0, "isa3": 1.0, "isapl": 1.5, "kg1": 1.7809, "kg2": 1.7763, "kg3": 1.7778, "kg4": 1.7778, "kgpl": 1.5, "ku1": 1.7778, "ku2": 1.7778, "ku3": 1.7778, "ku4": 1.7778, "kupl": 1.4146, "lib1": 1.4258, "lib2": 1.5214, "libcov": 1.3327, "libel": 1.5, "libfac": 2.4889, "libpl": 1.5, "libsec": 2.3638, "me_port": 1.004, "mf1": 1.7813, "mf2": 1.7813, "mf3": 1.7778, "mf4": 1.7778, "mf5": 1.7778, "mfpl": 1.5, "mfsec": 1.5, "rc1": 1.7767, "rc2": 1.7767, "rc3": 1.7778, "rc4": 1.7778, "rc6": 1.7778, "rcpl": 1.5, "rcsec": 1.5, "sc1": 1.775, "sc2": 1.7778, "sc3": 1.7778, "sc4": 1.7778, "scpl": 1.5, "tsi1": 1.7778, "tsi2": 1.7778, "tsi3": 1.7778, "tsi4": 1.7778, "tsi5": 1.7778, "tsiel": 1.5, "tv1": 1.7857, "tv2": 1.788, "tv3": 1.7857, "tv4": 1.7766};
+const L=(ka,en)=>({ka,en});
+const UI={
+ brand:L('ნიკოლოზ <b>შატბერაშვილი</b> პორტფოლიო','Nikoloz <b>Shatberashvili</b> Portfolio'),
+ nav_projects:L('პროექტები','Projects'),nav_approach:L('მიდგომა','Approach'),top:L('ზემოთ ↑','Back to top ↑'),toc:L('ამ პორტფოლიოსთვის განსაკუთრებით შერჩეული პროექტები','Projects chosen especially for this portfolio'),toc_sub:L('ეს 15 პროექტი ჩემი გამოცდილების ნაწილია და არა სრული სია. ისინი სპეციალურად ამ პორტფოლიოსთვის შევარჩიე.','These 15 projects are part of my experience, not the full list. I selected them specifically for this portfolio.'),pj1:L('პროექტი','project'),pjn:L('პროექტი','projects'),feat:L('გამორჩეული','Featured'),loc:L('ადგილმდებარეობა','Location'),nav_career:L('ჩემს შესახებ','About'),nav_toolkit:L('ინსტრუმენტები','Toolkit'),nav_contact:L('კონტაქტი','Contact'),
+ eyebrow:L('სამშენებლო პროექტის მენეჯერი · არქიტექტორი','Construction Project Manager and Architect, Georgia'),
+ h1:L('კონტექსტის გააზრებითა და მთელი არქიტექტურული პროცესის ზედამხედველობით, ახალი მიგნებების გათვალისწინებით, ვქმნი სივრცეებს, სადაც საზოგადოებას შეუძლია შეხვედრა, თანაარსებობა და რეალური წინსვლა მდგრადი ცხოვრებისკენ.','By understanding the context and overseeing the whole architectural process with new findings, create places that allow society to meet, coexist and enable to make real progress towards sustainable living.'),
+ lead:L('2009 წლიდან არქიტექტურასა და ობიექტზე ვმუშაობ. პროექტს პირველი ნახაზიდან ჩაბარებამდე ვმართავ.','In architecture and on site since 2009. I run projects from the first drawing to handover.'),
+ cta1:L('შერჩეული პროექტები','Selected projects'),cta2:L('დამიკავშირდით','Let’s get in touch'),
+ sketch:L('ესკიზი','Sketch'),render:L('რენდერი','Render'),
+ cmpcap:L('Canopy by Hilton. პროექტის ვიზუალი: CANA FORM, ჩემი ავტორობა არ არის. ჩემი როლი: ტექნიკური არქიტექტორი ობიექტზე.','Canopy by Hilton. Project visual by CANA FORM, not my own work. My role: Technical Architect on site.'),
+ d_approach:L('მიდგომა','Approach'),h_approach:L('ოთხი რამ, რაც ობიექტზე გადამწყვეტია','Four things that decide a site'),
+ p_approach:L('თითოეული მათგანი ჩემი მუშაობის ყოველდღიური ნაწილია, ელექტროსადგურიდან სასტუმრომდე და TVET ცენტრამდე.','Each one is part of my daily work, from a power plant to a hotel and a TVET centre.'),
+ d_projects:L('პროექტები','Projects'),h_projects:L('კონტექსტი და ჩემი წვლილი','Context and my contribution'),
+ p_projects:L('15-ვე პროექტი ერთნაირად ჩაშლილია: კონტექსტი და ჩემი წვლილი.','All 15 projects share the same breakdown: context and my contribution.'),
+ ed_edit:L('რედაქტირება','Edit page'),ed_done:L('დასრულება','Done'),ed_publish:L('გამოქვეყნება','Publish'),ed_lang:L('You are editing English text.','You are editing English text.'),ed_unsaved:L('შეუნახავია…','Unsaved…'),ed_saved:L('დრაფტი შენახულია.','Draft saved.'),ed_nodb:L('დრაფტის შენახვა ვერ მოხერხდა.','Could not save the draft.'),ed_pub:L('გამოქვეყნებულია.','Published.'),ed_nopub:L('პირდაპირ გამოქვეყნება ვერ მოხერხდა. დრაფტი შენახულია, ჩემთან დაწერეთ „გამოაქვეყნე ჩემი ცვლილებები“.','Direct publish unavailable. Draft is saved; ask Claude to publish your edits.'),annc:L('ღიაა შეთავაზებებისთვის: სამშენებლო პროექტის მენეჯერი და არქიტექტორი','Open to Construction Project Manager and Architect roles'),c1:L('დაგეგმვა და ვადები','Planning and schedule'),c2:L('ხარისხის კონტროლი','Quality control'),c3:L('კოორდინაცია ობიექტზე','Site coordination'),capsch:L('კონცეპტუალური ჭრილი · სქემა','Conceptual section · diagram'),lv_roof:L('სახურავი','ROOF'),lv_level2:L('სართ. 2','LEVEL 2'),lv_level1:L('სართ. 1','LEVEL 1'),lv_ground:L('მიწა','GROUND'),role1:L('სამშენებლო პროექტის მენეჯერი','Construction Project Manager'),role2:L('არქიტექტორი · საქართველო','Architect · Georgia'),dl_pf:L('პორტფოლიო PDF ↓','Portfolio PDF ↓'),dl_cv:L('CV (PDF) ↓','CV (PDF) ↓'),dl_na:L('ჩამოტვირთვა ამ ხედში მიუწვდომელია. ფაილი იხსნება ახალ ჩანართში.','Saving is not available in this view. The file opens instead.'),dl_no:L('ჩამოტვირთვა გაუქმდა.','Download cancelled.'),dl_ok:L('შენახულია.','Saved.'),dl_wait:L('ფაილი მზადდება…','Preparing the file…'),dl_err:L('ჩამოტვირთვა ვერ მოხერხდა.','Download failed.'),site:L('ობიექტზე','On site'),
+ d_archive:L('საპროექტო არქივი','Design archive'),h_archive:L('',''),
+ p_archive:L('რესტავრაცია, საგანმანათლებლო შენობები, ლანდშაფტი და საცხოვრებელი. დააჭირეთ პროექტს ნახაზებისა და ვიზუალებისთვის.','Restoration, education, landscape and housing. Open a project for drawings and visuals.'),
+ d_career:L('ჩემს შესახებ','About'),h_career:L('დიზაინიდან ობიექტამდე','From design to site'),
+ p_career:L('2009 წლიდან დღემდე, ბოლოდან პირველისკენ.','2009 to today, latest first.'),
+ d_toolkit:L('ინსტრუმენტები და განათლება','Toolkit and education'),h_toolkit:L('რით ვმუშაობ და რა ვისწავლე','What I work with and where I studied'),
+ software:L('პროგრამები','Software'),education:L('განათლება','Education'),certs:L('სერტიფიკატები','Certificates'),langs:L('ენები','Languages'),
+ h_contact:L('დამიკავშირდით როგორც არქიტექტორს და როგორც სამშენებლო პროექტების მენეჯერს','Keep in touch as an architect and as a construction project manager'),
+ p_contact:L('ვარ ღია წინადადებებისთვის სამშენებლო პროექტების მენეჯერის ან მთავარი არქიტექტორის როლში, სამშენებლო კომპანიებთან და დეველოპერებთან: პროექტის მართვა პირველი ნახაზიდან ჩაბარებამდე, ობიექტზე ზედამხედველობა და დიზაინის კონტროლი, დამკვეთის, კონტრაქტორისა და საპროექტო გუნდის კოორდინაცია.','I am open to roles as a construction project manager or lead architect with construction companies and developers: running a project from the first drawing to handover, site supervision and design control, and coordination between client, contractor and design team.'),
+ email:L('ელფოსტა','Email'),phone:L('ტელეფონი','Phone'),copy:L('ასლი','Copy'),copied:L('აღებულია','Copied'),
+ refs:L('რეკომენდატორები მოთხოვნისამებრ.','References available on request.'),
+ foot:L('პორტფოლიო 2026','Portfolio 2026'),
+ all:L('ყველა','All'),close:L('დახურვა','Close')
+};
+const STATS=[
+ {n:'2009',t:L('უმცროსი არქიტექტორი, მთავარი არქიტექტორი, პროექტის მენეჯერი','From junior architect to main architect and project manager')},
+ {n:'2016–25',t:L('IKORTA-ს თანადამფუძნებელი და მთავარი არქიტექტორი','Co-founder and main architect of IKORTA')},
+ {n:L('2 როლი','2 Roles'),t:L('განსხვავებული პერსპექტივა: არქიტექტორი და პროექტის მენეჯერი','Different perspectives: architect and construction project manager')},
+ {n:'MSc',t:L('სამშენებლო ინჟინერია, საქართველოს აგრარული უნივერსიტეტი, 2026','Construction Engineering, Agricultural University of Georgia, 2026')}
+];
+const DISC=[
+ {h:L('დაგეგმვა და გრაფიკი','Planning and schedule'),p:L('სამუშაოს მოცულობა, ვადები, ნახაზების გადახედვა, სამუშაოთა წარმოების მეთოდოლოგია.','Scope, timelines, drawing review, method statements.')},
+ {h:L('ხარჯების კონტროლი','Cost control'),p:L('ხარჯების მონიტორინგი, ქვეკონტრაქტორებისა და მომწოდებლების ანგარიშსწორება, მასალების აღრიცხვა.','Cost monitoring, subcontractor and supplier payments, material tracking.')},
+ {h:L('ხარისხი და უსაფრთხოება','Quality and safety'),p:L('რეგულარული ინსპექტირება პროექტისა და სამშენებლო ნორმების მიხედვით.','Regular inspections against the design and building codes.')},
+ {h:L('კოორდინაცია','Coordination'),p:L('დამკვეთი, დიზაინერები, კონტრაქტორები და ობიექტის გუნდი ერთ პროცესში.','Client, designers, contractors and site team in one process.')}
+];
+const FLAGS=[
+ {id:'tvet',
+  name:L('პროფესიული განათლების ბაზისური ცენტრი (TVET Centre of Excellence), თბილისი','TVET Centre of Excellence, Tbilisi'),
+  facts:[[L('ტიპი','Type'),L('პროფესიული განათლება','Vocational education')],[L('მისამართი','Location'),L('დავით აღმაშენებლის ხეივანი, მე-12 კმ, თბილისი','12th km, Davit Aghmashenebeli Alley, Tbilisi')],[L('დამკვეთი','Client'),L('ESIDA','ESIDA')],[L('დამსაქმებელი','Employer'),L('Britanian Construction, 2026–','Britanian Construction, 2026–')],[L('პოზიცია','Position'),L('სამშენებლო პროექტის მენეჯერი','Construction Project Manager')]],
+  ctx:L('პროფესიული განათლების პროგრამა 1: ბაზისური ცენტრის მშენებლობა. პროექტი: DMARK, სქემატური ეტაპი (2025). ვიზუალიზაციები DMARK-ს ეკუთვნის, ჩემი ავტორობა არ არის.','Vocational Education Programme 1: construction of a Centre of Excellence. Design: DMARK, schematic stage (2025). Renders by DMARK, not my own work.'),
+  role:L('სამშენებლო პროექტის მენეჯერი. დაგეგმვა: სამუშაოს მოცულობა, ვადები, არქიტექტურული და საინჟინრო ნახაზების გადახედვა. ხარისხი და უსაფრთხოება: სამშენებლო ნორმების დაცვა, რეგულარული ინსპექტირება. შეხვედრები დამკვეთთან და გუნდთან, ობიექტზე დავებისა და დაგვიანებების მოგვარება. სამუშაოთა წარმოების მეთოდოლოგიის მართვა.','Construction Project Manager. Planning: scope, timelines, review of architectural and engineering drawings. Quality and safety: building code compliance, regular site inspections. Progress meetings with the client and teams, resolving on-site disputes and delays. Method statements and technical methodology.'),
+  tbd:{ch:L('დასამატებელია: ყველაზე რთული საკითხი','To be added: the hardest issue'),so:L('დასამატებელია: რა გადაწყვეტილება მიიღეთ','To be added: the decision you made'),ou:L('დასამატებელია: შედეგი, ციფრები','To be added: result, figures')},
+  imgs:[['tv1',''],['tv2',''],['tv3',''],['tv4','']]},
+ {id:'bil',
+  name:L('ბილტმორის ფოიე, თბილისი','Biltmore Hotel foyer, Tbilisi'),
+  facts:[[L('ტიპი','Type'),L('სასტუმრო, ფოიე','Hotel, foyer')],[L('პერიოდი','Period'),L('2015–2016','2015–2016')],[L('დამსაქმებელი','Employer'),L('ARCHI-TEX','ARCHI-TEX')],[L('პოზიცია','Position'),L('სამშენებლო პროექტის მენეჯერი','Construction Project Manager')]],
+  ctx:L('სასტუმრო Biltmore-ის ფოიეს სამუშაოები. ფოტოებზე შენობის ფასადია, არა ფოიე; ფოტოები ჩემი ავტორობა არ არის.','Works on the foyer of the Biltmore hotel. The photos show the building exterior, not the foyer, and are not my own work.'),
+  role:L('სამშენებლო პროექტის მენეჯერი. პროცესის მართვა გეგმის მიხედვით, შესრულების მონიტორინგი და კონტროლი. ბიუჯეტის მართვა: პროექტის ხარჯების მონიტორინგი შესრულების მიხედვით. ხარისხის კონტროლი: სამუშაოს რეგულარული ინსპექტირება საპროექტო სპეციფიკაციებთან და ხარისხის სტანდარტებთან შესაბამისობაზე.','Construction Project Manager. Managed the process against the plan, monitored and controlled performance. Budget management: monitored project expenses based on fulfilment. Quality control: regular inspections of the work to guarantee compliance with design specifications and quality standards.'),
+  tbd:{ch:L('დასამატებელია: ყველაზე რთული საკითხი ობიექტზე','To be added: the hardest issue on site'),so:L('დასამატებელია: რა გადაწყვეტილება მიიღეთ','To be added: the decision you made'),ou:L('დასამატებელია: შედეგი, ციფრები','To be added: result, figures')},
+  imgs:[['bil1',''],['bil2',''],['bil3','']]},
+ {id:'apex',
+  name:L('საცხოვრებელი კომპლექსი, APEX Development','Residential development, APEX Development'),
+  facts:[[L('ტიპი','Type'),L('საცხოვრებელი კომპლექსი','Residential complex')],[L('პერიოდი','Period'),L('2021','2021')],[L('დამსაქმებელი','Employer'),L('APEX Development','APEX Development')],[L('პოზიცია','Position'),L('სამშენებლო ზედამხედველი ობიექტზე','Construction Supervisor on site')]],
+  ctx:L('მრავალბინიანი საცხოვრებელი კომპლექსი შიდა ეზოთი. ფოტოები: APEX Development (apexd.ge), ჩემი ავტორობა არ არის.','Multi-building residential complex with a landscaped courtyard. Photos: APEX Development (apexd.ge), not my own work.'),
+  role:L('სამშენებლო ზედამხედველი ობიექტზე. პროექტის ზედამხედველობა: ყოველდღიური სამუშაოების მონიტორინგი და პროგრესის უზრუნველყოფა. გუნდის მართვა: მუშების, ქვეკონტრაქტორების კოორდინაცია და ზედამხედველობა. უსაფრთხოების მოთხოვნების დაცვა. ხარისხის კონტროლი: ყველა სამუშაოს შესაბამისობა სტანდარტებთან. რესურსების მართვა: მასალების ხარჯვის აღრიცხვა და მომარაგების მოთხოვნა საჭიროებისამებრ.','Construction Supervisor on site. Project oversight: monitored day-to-day operations and ensured work progressed. Team management: coordinated and supervised workers and subcontractors. Safety compliance. Quality control: ensured all work met the specified standards. Resource management: tracked material usage and requisitioned supplies as needed.'),
+  tbd:{ch:L('დასამატებელია: ყველაზე რთული საკითხი ობიექტზე','To be added: the hardest issue on site'),so:L('დასამატებელია: რა გადაწყვეტილება მიიღეთ','To be added: the decision you made'),ou:L('დასამატებელია: შედეგი, ციფრები','To be added: result, figures')},
+  imgs:[['apx1',''],['apx2','']]},
+ {id:'gcc',
+  name:L('გარდაბნის კომბინირებული ციკლის ელექტროსადგური','Gardabani CCPP, Combined Cycle Power Plant'),
+  facts:[[L('ტიპი','Type'),L('ელექტროსადგური','Power plant')],[L('პერიოდი','Period'),L('2014–2015','2014–2015')],[L('დამსაქმებელი','Employer'),L('SYNERGY CONSTRUCT','SYNERGY CONSTRUCT')],[L('პოზიცია','Position'),L('ტექნიკური არქიტექტორი ობიექტზე','Technical Architect on site')]],
+  ctx:L('კომბინირებული ციკლის ელექტროსადგური გარდაბანში. სამშენებლო კომპანია: SYNERGY CONSTRUCT.','Combined cycle power plant in Gardabani. Construction company: SYNERGY CONSTRUCT.'),
+  role:L('ტექნიკური არქიტექტორი ობიექტზე. პროექტის დაგეგმვა: დეტალური გეგმების შემუშავება. ქვეკონტრაქტორებისა და მუშახელის შესრულების მონიტორინგი და კონტროლი. რეგულარული ინფორმირება პროექტის სტატუსზე დაინტერესებული მხარეებისთვის. ბიუჯეტის მართვა: ხარჯების კონტროლი, ქვეკონტრაქტორებისა და მომწოდებლების ანგარიშსწორების პროცესი. ხარისხის კონტროლი: სამუშაოს შესაბამისობა პროექტის სპეციფიკაციებთან რეგულარული ინსპექტირებით.','Technical Architect on site. Project planning: developed detailed project plans. Monitored and controlled the performance of subcontractors and workforce. Communication: regular project status updates to stakeholders. Budget management: controlled project costs and the payment process for subcontractors and suppliers. Quality control: regular inspections to ensure the work met design specifications and quality standards.'),
+  tbd:{ch:L('დასამატებელია: ყველაზე რთული საკითხი ობიექტზე','To be added: the hardest issue on site'),so:L('დასამატებელია: რა გადაწყვეტილება მიიღეთ','To be added: the decision you made'),ou:L('დასამატებელია: შედეგი, ციფრები','To be added: result, figures')},
+  imgs:[['gcc2',''],['gcc3',''],['gcc','']]},
+ {id:'hilton',
+  name:L('Canopy by Hilton','Canopy by Hilton'),
+  facts:[[L('ტიპი','Type'),L('სასტუმრო','Hotel')],[L('პერიოდი','Period'),L('2025–2026','2025–2026')],[L('დამსაქმებელი','Employer'),L('CANA FORM','CANA FORM')],[L('პოზიცია','Position'),L('ტექნიკური არქიტექტორი ობიექტზე','Technical Architect on site')]],
+  role:L('ტექნიკური არქიტექტორი ობიექტზე. ობიექტზე ზედამხედველობა და საპროექტო კონტროლი კონტრაქტორის ეტაპობრივი შესრულების მიხედვით. კოორდინაცია სამშენებლო მენეჯმენტის გუნდს, სამუშაო ნახაზებსა და კონტრაქტორს შორის. ხარისხის კონტროლი რეგულარული ინსპექტირებით საპროექტო სპეციფიკაციების მიხედვით.','Technical Architect on site. Site supervision and design control based on the contractor’s installments. Coordination between the construction management team, the construction drawings and the on-site contractor. Quality control through regular inspections against the design specification.'),
+  ctx:L('სასტუმრო ბრენდ Canopy by Hilton-ისთვის. ვიზუალები: CANA FORM.','Hotel for the Canopy by Hilton brand. Visuals: CANA FORM.'),
+  tbd:{ch:L('დასამატებელია: ყველაზე რთული საკითხი ობიექტზე','To be added: the hardest issue on site'),so:L('დასამატებელია: რა გადაწყვეტილება მიიღეთ','To be added: the decision you made'),ou:L('დასამატებელია: შედეგი, ციფრები','To be added: result, figures')},
+  imgs:[['hl1',''],['hl2','']]},
+ {id:'lib',rev:true,
+  name:L('საქართველოს ეროვნული ბიბლიოთეკა','National Library of Georgia'),
+  facts:[[L('დამკვეთი','Client'),L('თბილისის განვითარების ფონდი','Tbilisi Development Fund')],[L('წელი','Year'),L('2019','2019')],[L('ხანგრძლივობა','Duration'),L('8 თვე','8 months')],[L('გუნდი','Team'),L('15 კაცი','15 people')],[L('პოზიცია','Position'),L('პროექტის მთავარი არქიტექტორი','Main Architect')]],
+  ctx:L('რეგისტრირებული ისტორიული ძეგლი (1915). რესტავრაციის, რეაბილიტაციისა და რეკონსტრუქციის პროექტი.','Registered historical monument (1915). Restoration, rehabilitation and reconstruction design.'),
+  role:L('პროექტის ხელმძღვანელი და IKORTA-ს თანადამფუძნებელი. ვხელმძღვანელობდი მთელ საპროექტო ციკლს: საველე აზომვითი სამუშაოებიდან საბოლოო დოკუმენტაციამდე, 15-კაციანი გუნდის კოორდინაციას და კომუნიკაციას დამკვეთთან.','Project lead and co-founder of IKORTA. I led the full design cycle, from field survey to final documentation, coordinating a team of 15 and managing communication with the client.'),
+  ch:L('შენობის აზომვით სამუშაოებს მაღალი სიზუსტე სჭირდებოდა, რადგან მათზე დაყრდნობით შენდებოდა მთელი პროექტი. აზომვისას გამოვლინდა გვიანდელი მიშენება, რომელიც შენობის ფასადს აზიანებდა.','The building demanded a highly precise measured survey, because the entire design rested on it. The survey revealed a later addition that was damaging the façade.'),
+  so:L('აზომვები სრულად გადავიტანეთ CAD გარემოში და ამ ბაზაზე შევიმუშავეთ პროექტი. პრიორიტეტი იყო ისტორიული იერსახის დაბრუნება: ორიგინალი მოხატულობისა და ძველი ხის ვიტრაჟების აღდგენა, ფასადებისა და შიდა გეგმარების ძველი სახით დაბრუნება, გეგმარების მხოლოდ მცირე ნაწილში ცვლილება. გვიანდელი მიშენება პროექტში დემონტაჟდებოდა.','We moved the full survey into CAD and developed the design on that verified base. The priority was returning the historic appearance: restoring the original wall paintings and old timber windows, bringing façades and interiors back to their earlier look, and changing the layout only in a small part. The later addition was designated for demolition.'),
+  ou:L('8 თვეში გადავეცით დამკვეთს სრული საპროექტო დოკუმენტაცია. პროექტი მშენებლობამდე არ მისულა.','Full design documentation was delivered to the client within 8 months. The project did not proceed to construction.'),
+  imgs:[['lib1',''],['lib2',''],['libcov',''],['libfac','plan'],['libel','plan'],['libsec','plan'],['libpl','plan']]}
+];
+const ARCH=[
+ {id:'ilia',tag:'rest',name:L('ილია ჭავჭავაძის ლიტერატურულ-მემორიალური მუზეუმი','Ilia Chavchavadze Literary-Memorial Museum'),meta:L('ძეგლი, 1888','Monument, 1888'),
+  d:L('რეგისტრირებული ძეგლი (1888). არქიტექტურული აზომვა, შემდეგ რესტავრაციის, რეკონსტრუქციისა და რეაბილიტაციის პროექტი, სრული ინტერიერის დიზაინი, გარე ლანდშაფტი და ეზოს მოწყობა.','Registered monument (1888). Architectural survey, then restoration, reconstruction and rehabilitation design, with full interior design, exterior landscaping and courtyard development.'),imgs:['ilia1','ilia2','ilia4','ilia5','ilia6','ilia3']},
+ {id:'isa',tag:'rest',name:L('ისნის ქ. №2, საცხოვრებელი სახლი','Isani St. 2 Residential Building'),meta:L('ძეგლი, 1913','Monument, 1913'),
+  d:L('რეგისტრირებული ძეგლი (1913), საცხოვრებელი სახლი. კონსტრუქცია მძიმე მდგომარეობაში იყო და გამაგრება კონსტრუქციულად შეუძლებელი აღმოჩნდა, ამიტომ პროექტი ორიგინალი შენობის ზუსტ აღდგენას ითვალისწინებს.','Registered monument (1913), a residential house. The structure was severely compromised and reinforcing it was structurally unfeasible, so the design replicates the original building.'),imgs:['isa1','isa2','isa3','isapl']},
+ {id:'tsi',tag:'rest',name:L('წინამძღვრიშვილის ქ. №39, საცხოვრებელი სახლი','Tsinamdzghvrishvili St. 39 Residential Building'),meta:L('ძეგლი, 1896','Monument, 1896'),
+  d:L('რეგისტრირებული ძეგლი (1896). არქიტექტურული აზომვა, რესტავრაცია-რეაბილიტაციის პროექტი და შიდა ეზოს ლანდშაფტის დიზაინი.','Registered monument (1896). Architectural survey, restoration and rehabilitation project, and landscape design of the inner courtyard.'),imgs:['tsi1','tsi2','tsi3','tsi4','tsi5','tsiel']},
+ {id:'kg',tag:'edu',name:L('საბავშვო ბაღი, ნაფარეული','Kindergarten, Napareuli'),meta:L('150 ბავშვი · 1 665 მ²','150 children · 1,665 m²'),
+  d:L('ერთსართულიანი საბავშვო ბაღი 150 ბავშვზე, 1 665 მ². მოიცავს გენგეგმას, ეზოს, სათამაშო ზონებს, გამწვანებას, სატრანსპორტო და ქვეითად მოსიარულეთა გზებს.','Single-storey kindergarten for 150 children, 1,665 m². Includes site layout, courtyard, play areas, green spaces, vehicle access and pedestrian paths.'),imgs:['kg1','kg2','kg3','kg4','kgpl']},
+ {id:'sc',tag:'edu',name:L('სკოლა, მეტეხი','School, Metekhi'),meta:L('350 მოსწავლე · 4 078 მ²','350 pupils · 4,078 m²'),
+  d:L('სამსართულიანი სკოლა მცირე სარდაფით 350 მოსწავლეზე, 4 078 მ². მოიცავს ეზოს, სპორტულ მოედანს, პარკინგს, სატრანსპორტო და საფეხმავლო გზებს.','Three-storey school with a small basement for 350 pupils, 4,078 m². Includes courtyard, sports field, parking, and vehicle and pedestrian routes.'),imgs:['sc3','sc4','sc1','sc2','scpl']},
+ {id:'ku',tag:'land',name:L('ქუთაისის ცენტრალური პარკი','Kutaisi Central Park'),meta:L('დაარსდა 1848 · 18 529 მ²','Est. 1848 · 18,529 m²'),
+  d:L('ისტორიული პარკი (1848), 18 529 მ². ჯერ ხე-მცენარეების, ნაგებობებისა და შადრევნების ინვენტარიზაცია, შემდეგ სრული რეაბილიტაციის პროექტი: ბილიკების აღდგენა, შადრევნების რეკონსტრუქცია, ახალი ნარგავები და ახალი ალეები.','Historic park (1848), 18,529 m². Inventory of vegetation, structures and fountains, then a full rehabilitation design: restored paths, rebuilt fountains, new planting and new walkways.'),imgs:['ku1','ku2','ku3','ku4','kupl']},
+ {id:'mf',tag:'res',name:L('მრავალბინიანი სახლი, თბილისი','Multi-family residential building, Tbilisi'),meta:L('4 სართული · 5 ბინა · 834 მ²','4 floors · 5 apartments · 834 m²'),
+  d:L('ოთხსართულიანი შენობა ხუთი საცხოვრებელი ბინით, საერთო ფართი 834 მ².','Four-storey building with five apartments, 834 m² interior area.'),imgs:['mf1','mf2','mf4','mf5','mfpl','mfsec']},
+ {id:'rc',tag:'res',name:L('საცხოვრებელი კომპლექსი, ტაბახმელა','Residential complex, Tabakhmela'),meta:L('3 ბლოკი · 6 ბინა','3 blocks · 6 apartments'),
+  d:L('სამი ბლოკი სულ ექვსი ბინით. თითოეულ ბლოკს საკუთარი სარდაფი აქვს.','Three blocks with six apartments in total. Each block has its own basement level.'),imgs:['rc1','rc2','rc3','rc4','rc6','rcpl','rcsec']},
+ {id:'ih',tag:'res',name:L('კერძო სახლი, ტაბახმელა','Private house, Tabakhmela'),meta:L('350 მ² · აუზი','350 m² · pool'),
+  d:L('ერთსართულიანი სახლი, რელიეფის გათვალისწინებით სამ ტერასულ დონედ დაყოფილი, საცურაო აუზით. 350 მ².','Single-storey house split into three terraced levels to follow the terrain, with a swimming pool. 350 m².'),imgs:['ih1','ih2','ih3','ih4','ihpl','ihel','ihsec']}
+];
+const TILES_OLD=[['feat','hl1','#flags'],['rest','ilia1','rest'],['edu','sc1','edu'],['land','ku1','land'],['res','rc1','res']];
+const TAGS_OLD={all:L('ყველა','All'),rest:L('რესტავრაცია','Restoration'),edu:L('განათლება','Education'),land:L('ლანდშაფტი','Landscape'),res:L('საცხოვრებელი','Residential')};
+
+const TAGS={site:L('ობიექტზე','On site'),rest:L('რესტავრაცია','Restoration'),edu:L('განათლება','Education'),land:L('ლანდშაფტი','Landscape'),res:L('საცხოვრებელი','Residential')};
+const TB={
+ role:L('დასამატებელია: ჩემი როლი ამ პროექტში','To be added: my role on this project'),
+ ch:L('დასამატებელია: მთავარი გამოწვევა','To be added: the main challenge'),
+ so:L('დასამატებელია: მიღებული გადაწყვეტა','To be added: the solution applied'),
+ ou:L('დასამატებელია: შედეგი','To be added: the outcome')};
+const SPEC={
+ rc:{role:L('პროექტირების სრული ციკლის ხელმძღვანელობა ესკიზიდან დაწყებული, რომელიც დამკვეთთან ეტაპობრივად თანხმდებოდა, ასევე კომუნიკაციების, კონსტრუქციებისა და მომიჯნავე პროექტების ხელმძღვანელობა.','Leadership of the full design cycle, starting from the sketch design, which was agreed with the client stage by stage, as well as leadership of the communications, structures and adjacent projects.')},
+ mf:{role:L('ვხელმძღვანელობდი შენობის არქიტექტურულ გადაწყვეტას: კონცეფციიდან და ბინების დაგეგმარებიდან გეგმებისა და ჭრილების შემუშავებამდე, სამშენებლო და საინჟინრო მიმართულებების კოორდინაციასა და დამკვეთთან კომუნიკაციამდე.','I led the architectural solution of the building: from the concept and apartment layouts to the development of plans and sections, coordination with the structural and engineering disciplines, and communication with the client.')},
+ ku:{role:L('ასევე ვიყავი პროექტის ხელმძღვანელი, რომელიც კურირებდა პროექტის სრულ ციკლს ესკიზის შემუშავებიდან მუშა პროექტამდე.','I was also the project lead, overseeing the full project cycle from the development of the sketch design through to the working design.')},
+ sc:{role:L('ამ პროექტზე სრულად ვხელმძღვანელობდი საპროექტო პაკეტს, რომელიც შეიცავდა როგორც არქიტექტურულს, ასევე კომუნიკაციების, კონსტრუქციების და სხვა მომიჯნავე პროექტებს.','On this project I led the full design package, which included the architectural design as well as the communications, structures and other adjacent projects.')},
+ kg:{role:L('პროექტის სრული ციკლის ხელმძღვანელი: ერთსართულიანი საბავშვო ბაღის შენობის პროექტირება და სრული გენგეგმისა და ეზოს მოწყობა, სათამაშო ზონები, გამწვანება, სატრანსპორტო და ქვეითად მოსიარულეთა გზები.','Led the full project cycle: design of the single-storey kindergarten building and of the full site layout and courtyard development, outdoor play areas, green spaces, vehicle access and pedestrian paths.')},
+ tsi:{role:L('პროექტის მთავარი არქიტექტორი. შენობის სრული არქიტექტურული აზომვა, მის საფუძველზე რესტავრაცია-რეაბილიტაციის პროექტის დამუშავება და შიდა ეზოს ლანდშაფტის დიზაინი.','Main architect. A comprehensive architectural survey of the building, the restoration and rehabilitation project developed from it, and the landscape design for the inner courtyard.')},
+ ilia:{role:L('პროექტის ხელმძღვანელი და IKORTA-ს თანადამფუძნებელი. პირველ ეტაპზე შენობის სრული აზომვა განხორციელდა, შემდეგ კი ანაზომის საფუძველზე ვხელმძღვანელობდი სამუშაო პროექტის დამუშავებას 8 კაციანი გუნდით და ვმართავდი კომუნიკაციას დამკვეთთან საბოლოო დოკუმენტაციამდე.','Project lead and co-founder of IKORTA. A full measured survey of the building was carried out first. I then led the development of the working design from the survey data, coordinating a team of 8 and managing communication with the client through to final documentation.')},
+ isa:{role:L('პროექტის მთავარი არქიტექტორი. შენობის სრული არქიტექტურული აზომვა, შემდეგ ორიგინალის ზუსტად გამეორებული ახალი შენობის პროექტირება, რადგან არსებული კონსტრუქციის გამაგრება კონსტრუქციულად შეუძლებელი იყო.','Main architect. A comprehensive architectural survey of the building, then the design of a new building replicating the original, as reinforcing the existing structure was structurally unfeasible.'),ctx:L('რეგისტრირებული ძეგლი (1913), საცხოვრებელი სახლი.','Registered monument (1913), a residential house.'),ch:L('კონსტრუქცია მძიმე მდგომარეობაში იყო და გამაგრება კონსტრუქციულად შეუძლებელი აღმოჩნდა.','The structure was severely compromised and reinforcing it was structurally unfeasible.'),so:L('პროექტი ორიგინალი შენობის ზუსტ აღდგენას ითვალისწინებს.','The design replicates the original building.')},
+ ih:{role:L('სრული პროექტირება ესკიზიდან დაწყებული, მერიაში შეთანხმების ჩათვლით, ასევე მომიჯნავე პროექტების ხელმძღვანელობა.','Full design from the sketch stage, including approval by the municipality, as well as leadership of the adjacent projects.'),ctx:L('ერთსართულიანი სახლი საცურაო აუზით, 350 მ².','Single-storey house with a swimming pool, 350 m².'),ch:L('რელიეფი.','The terrain.'),so:L('სახლი სამ ტერასულ დონედ დავყავით, რელიეფის მიხედვით.','The house is split into three terraced levels that follow the terrain.')}
+};
+const DRAW=new Set(['libel','libpl','ilia3','isapl','tsiel','kgpl','scpl','kupl','mfpl','rcpl','ihpl','mfsec','rcsec','ihel','ihsec','hsk']);
+const ORDER=['tvet','hilton','apex','bil','gcc','lib','ilia','isa','tsi','kg','sc','ku','mf','rc','ih'];
+const PROJECTS0=[
+ ...FLAGS.map(f=>({...f,rk:({tvet:'pm',bil:'pm',apex:'sup',hilton:'ta',gcc:'ta',lib:'ma'})[f.id],tag:(f.id==='tvet'||f.id==='hilton'||f.id==='gcc'||f.id==='apex'||f.id==='bil')?'site':'rest'})),
+ ...ARCH.map(a=>{const sp=SPEC[a.id]||{};return {id:a.id,tag:a.tag,rk:'ma',name:a.name,
+  facts:[[L('ტიპი','Type'),TAGS[a.tag]],[L('მონაცემები','Key data'),a.meta],[L('პოზიცია','Position'),L('პროექტის მთავარი არქიტექტორი','Main Architect')]],
+  ctx:sp.ctx||a.d,role:sp.role||null,ch:sp.ch||null,so:sp.so||null,ou:null,tbdAll:true,imgs:a.imgs.map(k=>[k,DRAW.has(k)?'plan':''])}})
+];
+const PROJECTS=ORDER.map(id=>PROJECTS0.find(p=>p.id===id));
+const RTAGS={pm:L('სამშენებლო პროექტის მენეჯერი','Construction Project Manager'),sup:L('სამშენებლო ზედამხედველი','Construction Supervisor'),ta:L('ტექნიკური არქიტექტორი','Technical Architect'),ma:L('მთავარი არქიტექტორი','Main Architect')};
+const TILES=[['pm','tv1'],['sup','apx1'],['ta','hl1'],['ma','lib1']];
+const JOBS=[
+ {y:'2026 –',org:'Britanian Construction',role:L('სამშენებლო პროექტის მენეჯერი','Construction Project Manager'),pj:'TVET Centre of Excellence',pts:[
+  L('დაგეგმვა: სამუშაოს მოცულობა, ვადები, არქიტექტურული და საინჟინრო ნახაზების გადახედვა','Planning: scope, timelines, review of architectural and engineering drawings'),
+  L('ხარისხი და უსაფრთხოება: სამშენებლო ნორმების დაცვა, რეგულარული ინსპექტირება','Quality and safety: building code compliance, regular site inspections'),
+  L('შეხვედრები დამკვეთთან და გუნდთან, ობიექტზე დავებისა და დაგვიანებების მოგვარება','Progress meetings with the client and teams, resolving on-site disputes and delays'),
+  L('სამუშაოთა წარმოების მეთოდოლოგიის მართვა','Method statements and technical methodology')]},
+ {y:'2025 – 2026',org:'CANA FORM',role:L('ტექნიკური არქიტექტორი ობიექტზე','Technical Architect on site'),pj:'Canopy by Hilton',pts:[
+  L('ზედამხედველობა და საპროექტო კონტროლი კონტრაქტორის ეტაპობრივი შესრულების მიხედვით','Site supervision and design control based on the contractor’s installments'),
+  L('კოორდინაცია სამშენებლო მენეჯმენტის გუნდს, ნახაზებსა და კონტრაქტორს შორის','Coordination between the construction management team, drawings and the contractor'),
+  L('ხარისხის კონტროლი საპროექტო სპეციფიკაციების მიხედვით','Quality control against design specifications')]},
+ {y:'2016 – 2025',org:'IKORTA',role:L('თანადამფუძნებელი, მთავარი არქიტექტორი','Co-founder, Main Architect'),pts:[
+  L('დიზაინის ხელმძღვანელობა: პროექტების ხედვა და მიმართულება','Design leadership: vision and direction of projects'),
+  L('ბიზნესის განვითარება: პარტნიორობები და რეფერალები','Business co-development: partnerships and referrals'),
+  L('პროექტის მართვა: დაგეგმვა, შესრულება, დასრულება; კოორდინაცია დამკვეთებთან, კონტრაქტორებთან და სხვა მხარეებთან','Project management: planning, execution and completion, with clients, contractors and other stakeholders')]},
+ {y:'2021',org:'APEX Development',role:L('სამშენებლო ზედამხედველი ობიექტზე','Construction Supervisor on site'),pts:[
+  L('ყოველდღიური სამუშაოების მონიტორინგი და პროგრესის უზრუნველყოფა','Day-to-day oversight of site operations'),
+  L('მუშებისა და ქვეკონტრაქტორების კოორდინაცია და ზედამხედველობა','Coordinated and supervised workers and subcontractors'),
+  L('უსაფრთხოება და ხარისხის კონტროლი; მასალების ხარჯვის აღრიცხვა და მომარაგება','Safety and quality control; material tracking and requisitions')]},
+ {y:'2015 – 2016',org:'ARCHI-TEX',role:L('სამშენებლო პროექტის მენეჯერი','Construction Project Manager'),pts:[
+  L('პროცესის მართვა გეგმის მიხედვით, შესრულების მონიტორინგი და კონტროლი','Managed the process against the plan, monitored and controlled performance'),
+  L('პროექტის ხარჯების მონიტორინგი შესრულების მიხედვით','Monitored project expenses against fulfilment'),
+  L('სამუშაოს რეგულარული ინსპექტირება საპროექტო სპეციფიკაციებთან შესაბამისობაზე','Regular inspections for compliance with design specifications')]},
+ {y:'2014 – 2015',org:'SYNERGY CONSTRUCT',role:L('ტექნიკური არქიტექტორი ობიექტზე','Technical Architect on site'),pj:'Gardabani CCPP',pts:[
+  L('დეტალური გეგმების შემუშავება','Developed detailed project plans'),
+  L('ქვეკონტრაქტორებისა და მუშახელის შესრულების მონიტორინგი','Monitored subcontractor and workforce performance'),
+  L('რეგულარული ინფორმირება პროექტის სტატუსზე','Regular status updates to stakeholders'),
+  L('ხარჯების კონტროლი, ქვეკონტრაქტორებისა და მომწოდებლების ანგარიშსწორების პროცესი','Controlled costs and subcontractor and supplier payment processes'),
+  L('ხარისხის კონტროლი რეგულარული ინსპექტირებით','Quality control through regular inspections')]},
+ {y:'2013 – 2014',org:'RETAILER',role:L('უფროსი არქიტექტორი და ინტერიერის დიზაინერი','Senior Architect and Interior Designer'),pts:[L('საცალო ქსელის სავაჭრო სივრცეებისა და სტრუქტურის დაგეგმვა','Planning retail merchandise layout and structure')]},
+ {y:'2009 – 2011',org:'GA-NIEKISCH',role:L('უმცროსი არქიტექტორი','Junior Architect'),pts:[L('პირველი პრაქტიკა საარქიტექტორო ფირმაში','First practice in an architectural firm')]}
+];
+const TOOLS=[['Archicad',5,'Excellent'],['Lumion',5,'Excellent'],['Photoshop',5,'Excellent'],['Microsoft Office',5,'Excellent'],['AutoCAD',3,'Good'],['3ds Max',3,'Good'],['MS Project',3,'Good'],['LIRA-SAPR',3,'Good'],['SAP2000',3,'Good']];
+const LV={Excellent:L('მაღალი','Excellent'),Good:L('კარგი','Good')};
+const ED=[
+ [L('საქართველოს აგრარული უნივერსიტეტი','Agricultural University of Georgia'),L('სამშენებლო ინჟინერიის მაგისტრი, 2026','Master of Construction Engineering, 2026')],
+ [L('თბილისის სახელმწიფო სამხატვრო აკადემია','Tbilisi State Academy of Arts'),L('ლანდშაფტის არქიტექტურის მაგისტრი, 2014','Master, Landscape Architecture, 2014')],
+ [L('თბილისის სახელმწიფო სამხატვრო აკადემია','Tbilisi State Academy of Arts'),L('არქიტექტურის ბაკალავრი, 2012','Bachelor, Architecture, 2012')]
+];
+const CERTS=[['cert2',L('სამშენებლო პროექტების მენეჯმენტი · BMCC Center · 05.07.2025','Construction Project Management · BMCC Center · 05.07.2025')],['cert1',L('სამშენებლო ხარჯთაღრიცხვა · BMCC Center · 17.07.2025','Construction Cost Estimation · BMCC Center · 17.07.2025')]];
+const LANGS=[[L('ქართული','Georgian'),L('მშობლიური','Native')],[L('ინგლისური','English'),L('თავისუფლად','Fluent')],[L('რუსული','Russian'),L('კარგად','Good')]];
+const LBL={ctx:L('კონტექსტი','Context'),role:L('ჩემი წვლილი','My contribution'),ch:L('გამოწვევა','Challenge'),so:L('გადაწყვეტა','Solution'),ou:L('შედეგი','Outcome')};
+
+let lang='en',filter='all';
+const t=o=>o[lang];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const img=(k,alt)=>`<img src="${IMG[k]||''}" alt="${esc(alt||k)}">`;
+
+function renderStatic(){
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const v=UI[el.dataset.i18n];if(v){el.dataset.ek='ui.'+el.dataset.i18n;el.innerHTML=t(v)}});
+  
+}
+function renderStats(){$('#stats').innerHTML=STATS.map(s=>`<div class="stat"><b${s.sm?' class="sm"':''}>${typeof s.n==='string'?s.n:t(s.n)}</b><span data-ek="s.${STATS.indexOf(s)}">${t(s.t)}</span></div>`).join('');
+  $('#disc').innerHTML=DISC.map((d,di)=>`<div><h3 data-ek="d.${di}.h">${t(d.h)}</h3><p data-ek="d.${di}.p">${t(d.p)}</p></div>`).join('')}
+function renderFlags(){
+  $('#flags').innerHTML=PROJECTS.map((f,ix)=>{
+    const facts=f.facts.map(([k,v])=>`<div${k.en==='Position'?' class="pos"':''}><dt>${t(k)}</dt><dd>${k.en==='Position'&&lang==='en'?String(t(v)).replace(/ and /g,' &amp; '):t(v)}</dd></div>`).join('');
+    const row=(k)=>`<div><dt>${t(LBL[k])}</dt><dd data-ek="p.${f.id}.${k}">${f[k]&&t(f[k])?t(f[k]):`<span class="tbd">${t((f.tbd&&f.tbd[k])||TB[k])}</span>`}</dd></div>`;
+    const body=['ctx','role'].map(k=>k==='ctx'?((f.ctx&&t(f.ctx))?row('ctx'):''):row(k)).join('');
+    const car=f.imgs.length>2;const gal=f.imgs.map(([k,c],i)=>{const ar=AR[k]||1.5;const H=340;return `<button class="${c}${i===0?' hero1':''}" style="--ar:${ar.toFixed(3)};flex:${(ar*100).toFixed(1)} 1 ${Math.round(ar*H)}px" data-zoom="${k}" data-title="${esc(t(f.name))}" aria-label="${esc(t(f.name))} ${i+1}">${img(k,t(f.name))}</button>`}).join('');
+    return `<article class="flag" id="p-${f.id}"><div class="fh"><div><span class="pn">${String(ix+1).padStart(2,'0')} / ${PROJECTS.length}</span><h3 data-ek="p.${f.id}.name">${t(f.name)}</h3></div><dl class="facts">${facts}</dl></div>${car?`<div class="galw"><div class="gal car">${gal}</div><div class="cnav"><button type="button" data-car="-1" aria-label="Previous">←</button><span class="cc">1 / ${f.imgs.length}</span><button type="button" data-car="1" aria-label="Next">→</button></div></div>`:`<div class="gal">${gal}</div>`}<dl class="bd">${body}</dl></article>`}).join('');
+}
+function renderToc(){
+  $('#tiles').innerHTML=TILES.map(([k,im])=>{const list=PROJECTS.filter(a=>a.rk===k);const n=list.length;const name=t(RTAGS[k]);const ar=AR[im]||1.5;
+    return `<button class="tile" data-go="#p-${list[0].id}"><div class="tp"><span class="tc">${n} ${t(n===1?UI.pj1:UI.pjn)}</span><i class="tg" aria-hidden="true">↓</i></div><h3 class="tn">${name}</h3><ul class="tls">${list.map(a=>`<li>${t(a.name)}</li>`).join('')}</ul><div class="im" style="--ar:${ar.toFixed(3)}">${img(im,name)}</div></button>`}).join('');
+}
+function renderJobs(){
+  $('#tl').innerHTML=JOBS.map(j=>`<div class="job"><div class="yr">${j.y}</div><div><h3 data-ek="j.${JOBS.indexOf(j)}.role">${lang==='en'?String(t(j.role)).replace(/ and /g,' &amp; '):t(j.role)}</h3><div class="org">${j.org}</div>${j.pj?`<span class="pj">${j.pj}</span>`:''}<ul>${j.pts.map((p,pi)=>`<li data-ek="j.${JOBS.indexOf(j)}.pt${pi}">${t(p)}</li>`).join('')}</ul></div></div>`).join('');
+}
+function renderTools(){
+  $('#tools').innerHTML=TOOLS.map(([n,l,lv])=>`<div class="tool"><b>${n}</b><span class="sm">${t(LV[lv])}</span><div class="meter" aria-hidden="true">${[1,2,3,4,5].map(i=>`<i class="${i<=l?'on':''}"></i>`).join('')}</div></div>`).join('');
+  $('#ed').innerHTML=ED.map(([a,b])=>`<div><b>${t(a)}</b><span>${t(b)}</span></div>`).join('');
+  $('#certs').innerHTML=CERTS.map(([k,c])=>`<button data-zoom="${k}" data-title="${esc(t(c))}">${img(k,t(c))}<span>${t(c)}</span></button>`).join('');
+  $('#langs').innerHTML=LANGS.map(([a,b])=>`<div><b>${t(a)}</b><span>${t(b)}</span></div>`).join('');
+}
+function renderAll(){renderStatic();renderStats();renderFlags();renderToc();renderJobs();renderTools();fitGal();fitFull();fitHead();setTimeout(fitCar,0);document.querySelectorAll('img[data-img]').forEach(i=>i.src=IMG[i.dataset.img]||'')}
+
+function openModal(title,html){$('#mt').textContent=title;$('#mb').innerHTML=html;$('#mx').textContent=t(UI.close);$('#ov').hidden=false;document.body.style.overflow='hidden';$('#mx').focus()}
+function closeModal(){$('#ov').hidden=true;document.body.style.overflow=''}
+$('#mx').onclick=closeModal;
+$('#ov').addEventListener('click',e=>{if(e.target.id==='ov')closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#ov').hidden)closeModal()});
+
+document.addEventListener('click',e=>{
+  const cb=e.target.closest('[data-car]');
+  if(cb){const g=cb.closest('.galw').querySelector('.gal');g.scrollBy({left:(+cb.dataset.car)*g.clientWidth*0.9,behavior:'smooth'});return}
+  const z=e.target.closest('[data-zoom]');
+  if(z){openModal(z.dataset.title||'',`<div class="imgs"><img src="${IMG[z.dataset.zoom]}" alt=""></div>`);return}
+  const g=e.target.closest('[data-go]');
+  if(g){document.querySelector(g.dataset.go).scrollIntoView({behavior:'smooth'});return}
+  const dl=e.target.closest('[data-dl]');
+  if(dl){download(e,dl);return}
+  const cp=e.target.closest('[data-copy]');
+  if(cp){const el=document.getElementById(cp.dataset.copy);const done=()=>{cp.textContent=t(UI.copied);setTimeout(()=>cp.textContent=t(UI.copy),1400)};
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);done()};
+    try{navigator.clipboard.writeText(el.textContent).then(done,sel)}catch(err){sel()}}
+});
+let toastT;
+function toast(m){let el=$('#toast');if(!el){el=document.createElement('div');el.id='toast';el.setAttribute('role','status');document.body.appendChild(el)}
+  el.textContent=m;el.style.display='block';clearTimeout(toastT);toastT=setTimeout(()=>{el.style.display='none'},7000);const d=$('#dlmsg');if(d)d.textContent=m}
+async function download(e,a){
+  if(!window.claude){a.setAttribute('download',a.dataset.dl==='cv'?'Nikoloz_Shatberashvili_CV.pdf':'Nikoloz_Shatberashvili_Portfolio.pdf');return}
+  e.preventDefault();
+  const href=a.getAttribute('href');
+  const name=a.dataset.dl==='cv'?'Nikoloz_Shatberashvili_CV.pdf':'Nikoloz_Shatberashvili_Portfolio.pdf';
+  let d=null;
+  try{d=window.claude&&await claude.use('downloads')}catch(x){}
+  if(!d){toast(t(UI.dl_na));window.open(href,'_blank');return}
+  toast(t(UI.dl_wait));
+  let blob;
+  try{const r=await fetch(href);if(!r.ok)throw new Error('HTTP '+r.status);blob=await r.blob()}
+  catch(x){toast(t(UI.dl_err)+' (fetch: '+(x&&x.message||x)+')');window.open(href,'_blank');return}
+  try{await d.save({filename:name,data:blob});toast(t(UI.dl_ok))}
+  catch(x){const c=x&&x.code;if(c==='declined')toast(t(UI.dl_no));else toast(t(UI.dl_err)+' ('+(c||'')+' '+(x&&x.message||'')+')')}
+}
+function setLang(l){lang=l;renderAll();if(typeof fitLead==='function')fitLead();fitHead();fitGal();fitFull();if(editing){setEditable(true);updBar()}const b=$('#edbtn');if(b)b.textContent=t(UI.ed_edit)}
+
+renderAll();
+
+if(IMG.me_port){const mp=$('#meport');if(mp)mp.src=IMG.me_port}
+if(IMG.me){const m=$('#me');if(m)m.innerHTML='<img src="'+IMG.me+'" alt="Nikoloz Shatberashvili">'}
+/* ===== on-page editor ===== */
+const OV=new Map();            /* "lang|key" -> text */
+let editing=false,canEdit=false,saveT,dirty=false;
+const regGet=(key)=>{const p=key.split('.');
+  if(p[0]==='ui')return UI[p[1]];
+  if(p[0]==='p'){const f=PROJECTS.find(x=>x.id===p[1]);if(!f)return null;if(p[2]==='name')return f.name;if(!f[p[2]])f[p[2]]=L('','');return f[p[2]]}
+  if(p[0]==='j'){const j=JOBS[+p[1]];if(!j)return null;return p[2]==='role'?j.role:j.pts[+p[2].slice(2)]}
+  if(p[0]==='s')return (STATS[+p[1]]||{}).t;
+  if(p[0]==='d'){const d=DISC[+p[1]];return d&&d[p[2]]}
+  return null};
+function applyItems(items){(items||[]).forEach(([lg,key,text])=>{const o=regGet(key);if(o&&(lg==='en'||lg==='ka')){o[lg]=text;OV.set(lg+'|'+key,text)}})}
+const itemsArr=()=>[...OV].map(([k,v])=>{const i=k.indexOf('|');return [k.slice(0,i),k.slice(i+1),v]});
+async function loadEdits(){
+  try{const r=await fetch('edits.json');if(r.ok){const j=await r.json();applyItems(j.items)}}catch(e){}
+  try{const db=window.claude&&await claude.use('db');if(db){const sn=await db.doc('edits/main').get();if(sn.exists){const d=sn.data();if(d&&Array.isArray(d.items)){OV.clear();applyItems(d.items)}}}}catch(e){}
+  if(!editing)renderAll();
+}
+function status(m){let el=$('#edbar .st');if(el)el.textContent=m}
+function scheduleSave(){dirty=true;status(t(UI.ed_unsaved));clearTimeout(saveT);saveT=setTimeout(saveDraft,1500)}
+async function saveDraft(){
+  try{const db=window.claude&&await claude.use('db');if(!db){status(t(UI.ed_nodb));return}
+    await db.doc('edits/main').set({items:itemsArr()});dirty=false;status(t(UI.ed_saved))}
+  catch(e){status(t(UI.ed_nodb)+' ('+(e&&e.code||'')+')')}
+}
+async function publishEdits(){
+  await saveDraft();
+  try{const a=window.claude&&await claude.use('artifact');if(!a)throw {code:'unavailable'};
+    await a.publish({'edits.json':{content:JSON.stringify({items:itemsArr()}),contentType:'application/json'}});
+    status(t(UI.ed_pub))}
+  catch(e){status(t(UI.ed_nopub)+' ('+(e&&e.code||'')+')')}
+}
+function setEditable(on){
+  document.querySelectorAll('[data-ek]').forEach(el=>{
+    const o=regGet(el.dataset.ek);const orig=o?o[lang]:'';
+    const ok=on&&o&&!/<[a-z]/i.test(orig||'');
+    if(ok){el.contentEditable='plaintext-only';if(el.contentEditable!=='plaintext-only')el.contentEditable='true';el.classList.add('ed')}
+    else{el.removeAttribute('contenteditable');el.classList.remove('ed')}
+  });
+}
+function toggleEdit(on){
+  editing=on;document.body.classList.toggle('editing',on);
+  let bar=$('#edbar');
+  if(on){if(!bar){bar=document.createElement('div');bar.id='edbar';document.body.appendChild(bar)}
+    bar.innerHTML=`<span class="st"></span><span class="ln"></span><button data-ed="pub"></button><button data-ed="done"></button>`;
+    bar.style.display='flex';updBar();setEditable(true)}
+  else{if(bar)bar.style.display='none';setEditable(false);const eb=$('#edbtn');if(eb)eb.style.display=canEdit?'block':'none'}
+  const eb=$('#edbtn');if(eb)eb.style.display=(canEdit&&!on)?'block':'none';
+}
+function updBar(){const b=$('#edbar');if(!b)return;b.querySelector('.ln').textContent=t(UI.ed_lang);b.querySelector('[data-ed=pub]').textContent=t(UI.ed_publish);b.querySelector('[data-ed=done]').textContent=t(UI.ed_done);if(!b.querySelector('.st').textContent)status(dirty?t(UI.ed_unsaved):'')}
+document.addEventListener('focusin',e=>{const el=e.target.closest&&e.target.closest('[data-ek].ed');if(el&&el.querySelector('.tbd'))el.textContent=''});
+document.addEventListener('focusout',e=>{const el=e.target.closest&&e.target.closest('[data-ek].ed');if(!el)return;
+  const key=el.dataset.ek,o=regGet(key);if(!o)return;
+  const txt=el.innerText.replace(/ /g,' ').trim();
+  if(txt===''){if(!o[lang]){renderAll();setEditable(true)}else{el.textContent=o[lang]}return}
+  if(txt!==o[lang]){o[lang]=txt;OV.set(lang+'|'+key,txt);scheduleSave()}});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.closest&&e.target.closest('[data-ek].ed')&&!e.target.closest('dd,p,li')){e.preventDefault();e.target.blur()}});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-ed],#edbtn');if(!b)return;
+  if(b.id==='edbtn'){toggleEdit(true);return}
+  if(b.dataset.ed==='done'){saveDraft();toggleEdit(false)}
+  if(b.dataset.ed==='pub')publishEdits()},true);
+document.addEventListener('click',e=>{if(editing&&e.target.closest('[data-ek].ed')){e.stopPropagation();e.preventDefault()}},true);
+(async()=>{try{const u=window.claude&&await claude.use('user');if(u&&await u.canEdit()){canEdit=true;
+  const b=document.createElement('button');b.id='edbtn';b.textContent=t(UI.ed_edit);document.body.appendChild(b)}}catch(e){}})();
+loadEdits();
+
+function carCount(g){const b=[...g.querySelectorAll('button')];const x=g.scrollLeft+2;let i=0;b.forEach((el,k)=>{if(el.offsetLeft-g.offsetLeft<=x+el.offsetWidth/2)i=k});const w=g.closest('.galw'),cc=w&&w.querySelector('.cc');if(cc)cc.textContent=(i+1)+' / '+b.length;const bs=w.querySelectorAll('.cnav button');bs[0].disabled=g.scrollLeft<=2;bs[1].disabled=g.scrollLeft+g.clientWidth>=g.scrollWidth-2}
+document.addEventListener('scroll',e=>{if(e.target.classList&&e.target.classList.contains('car'))carCount(e.target)},true);
+function fitCar(){document.querySelectorAll('.gal.car').forEach(carCount)}
+addEventListener('resize',fitCar);addEventListener('load',fitCar);
+function fitFull(){document.querySelectorAll('.toc .ts,.sh p').forEach(e=>{e.classList.remove('one');e.style.fontSize='';if(innerWidth<760)return;const W=e.clientWidth;const base=parseFloat(getComputedStyle(e).fontSize);const r=document.createRange();r.selectNodeContents(e);const nat=r.getBoundingClientRect().width;const lh=parseFloat(getComputedStyle(e).lineHeight)||base*1.4;if(e.getBoundingClientRect().height>lh*1.6)return;if(nat<W*.55)return;let f=Math.min(base*W/nat,base*1.7);e.style.fontSize=f+'px';e.classList.add('one');if(e.scrollWidth>e.clientWidth+1){f*=.97;e.style.fontSize=f+'px'}})}
+addEventListener('resize',fitFull);addEventListener('load',fitFull);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitFull);
+function fitGal(){document.querySelectorAll('.gal:not(.car)').forEach(g=>{g.classList.remove('fill');const b=[...g.querySelectorAll('button')];if(b.length<2)return;const top=b[b.length-1].offsetTop;const row=b.filter(x=>Math.abs(x.offsetTop-top)<3);if(row.length===b.length&&b.length<2)return;const gap=parseFloat(getComputedStyle(g).columnGap)||12;const sum=row.reduce((a,x)=>a+(parseFloat(x.style.getPropertyValue('--ar'))||1.5),0);const h=(g.clientWidth-gap*(row.length-1))/sum;if(h<=560)g.classList.add('fill')})}
+addEventListener('resize',fitGal);addEventListener('load',fitGal);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitGal);
+function fitHead(){document.querySelectorAll('.sh h2,.contact h2').forEach(e=>{e.classList.remove('one');e.style.fontSize='';if(innerWidth<760)return;e.classList.add('one');const W=e.clientWidth;const r=document.createRange();r.selectNodeContents(e);const base=parseFloat(getComputedStyle(e).fontSize);const nat=r.getBoundingClientRect().width;if(!nat)return;let f=Math.min(base*W/nat,88);e.style.fontSize=f+'px';if(e.scrollWidth>e.clientWidth+1){f*=.97;e.style.fontSize=f+'px'}})}
+addEventListener('resize',fitHead);addEventListener('load',fitHead);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitHead);
+function fitLead(){const e=document.querySelector('.panel .hero p.lead');if(!e)return;e.classList.remove('one');const lh=parseFloat(getComputedStyle(e).lineHeight)||24;if(e.getBoundingClientRect().height<lh*1.6&&innerWidth>=700)e.classList.add('one')}
+addEventListener('resize',fitLead);addEventListener('load',fitLead);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitLead);
+</script>
+
+</body></html>
